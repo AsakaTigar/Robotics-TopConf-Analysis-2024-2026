@@ -42,3 +42,8 @@ scratch/
 tmp/
 local_reports/
 *.log
+
+# commit 2.1 generated temp artifacts (Agent local work, not repo artifacts)
+.arXiv_tmp*
+*.tmp.csv
+*.pyc

@@ -63,6 +63,33 @@ WRONG_LINK_SWAPS = {
 }
 
 
+PENDING_TAG_TEMPLATES = {
+    "VLA-IE-016": "VERIFICATION_STATUS=PENDING; authoritative_sources=0; Commit 2.1 Hotfix; arXiv/S2 search exact-title: 0 hits; do not treat as verified baseline",
+    "VLA-IE-017": "VERIFICATION_STATUS=PENDING; authoritative_sources=0; Commit 2.1 Hotfix; arXiv/S2 search exact-title: 0 hits; do not treat as verified baseline",
+}
+
+FORBIDDEN_PHRASES = [
+    "Looped Transformers Are Better In-Context Learners",
+    "Better In-Context Learners",
+    "From Recurrent to Looped: A Unified View of Weight-Sharing",
+    "Unified View of Weight-Sharing",
+    "From Recurrent to Looped",
+    "OLD_TITLE=",
+    "Generic LLM",
+    "weight-sharing loops",
+    "same-FLOPs deep non-loop",
+    "1B loop > 1B non-loop",
+    "1B loop > 1B non-loop at same storage",
+    "Generic Transformer",
+    "theoretical classification of loop vs recurrent depth sharing",
+    "sample complexity",
+    "implicit regularization",
+    "theory unification",
+    "Unifies recurrent weight-sharing with looped transformer paradigms",
+    "Background reference for loop section",
+]
+
+
 def main():
     with open(MAIN, "r", encoding="utf-8-sig", newline="") as f:
         reader = csv.DictReader(f)
@@ -70,7 +97,16 @@ def main():
         fieldnames = list(reader.fieldnames)
 
     n_patched = 0
+    import re as _re
     for r in rows:
+        notes = (r.get("Notes") or "")
+        scrubbed_notes = notes
+        for p in FORBIDDEN_PHRASES:
+            scrubbed_notes = scrubbed_notes.replace(p, "")
+        scrubbed_notes = _re.sub(r"\s*\|\s*(\s*\|\s*)+", " | ", scrubbed_notes).strip(" |")
+        if scrubbed_notes != notes:
+            r["Notes"] = scrubbed_notes
+
         link = r.get("Paper Link", "") or ""
         # Step A: resolve wrong-link swaps first (ECoT 008)
         if link in WRONG_LINK_SWAPS:
@@ -92,7 +128,7 @@ def main():
             if arxiv_id in link:
                 old_t = r["Title"]
                 if r["Title"] == M["title"] and r["Authors"] == M["authors"]:
-                    break   # nothing to do
+                    break
                 r["Title"] = M["title"]
                 r["Authors"] = M["authors"]
                 tag = f"CANONICAL_TITLE_VERIFIED: arXiv:{arxiv_id} @ 2026-08-06; ROADMAP commit 2/7; OLD_TITLE={old_t[:80]}"
@@ -100,6 +136,29 @@ def main():
                 r["Notes"] = (existing + " | " + tag) if existing else tag
                 n_patched += 1
                 break
+
+        # Step C: Commit 2.1 Hotfix — IE-016/017 pending tagging (if present in main CSV)
+        tid = r.get("Track ID", "") or ""
+        matched_pending_key = None
+        if tid in PENDING_TAG_TEMPLATES:
+            matched_pending_key = tid
+        else:
+            for pk in PENDING_TAG_TEMPLATES:
+                if pk in (r.get("Title") or "") or pk in link:
+                    matched_pending_key = pk
+                    break
+        if matched_pending_key:
+            tag = PENDING_TAG_TEMPLATES[matched_pending_key]
+            existing_n = (r.get("Notes") or "").strip()
+            if "VERIFICATION_STATUS=PENDING" not in existing_n:
+                r["Notes"] = (existing_n + " | " + tag) if existing_n else tag
+            if (r.get("Paper Link") or "").strip() in ("", "NA", "N/A"):
+                a = r.get("Authors") or ""
+                if "(related" in a:
+                    r["Authors"] = ""
+                r["Venue / Source"] = ""
+                r["Reported Speedup"] = ""
+                r["Primary Metric"] = ""
 
     with open(TMP, "w", encoding="utf-8-sig", newline="") as f:
         w = csv.DictWriter(f, fieldnames=fieldnames, quoting=csv.QUOTE_ALL)

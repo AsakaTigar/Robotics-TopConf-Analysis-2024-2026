@@ -1,0 +1,83 @@
+{
+  "2601.09708v2": {
+    "id": "http://arxiv.org/abs/2601.09708v2",
+    "title": "Fast-ThinkAct: Efficient Vision-Language-Action Reasoning via Verbalizable Latent Planning",
+    "summary": "Vision-Language-Action (VLA) tasks require reasoning over complex visual scenes and executing adaptive actions in dynamic environments. While recent studies on reasoning VLAs show that explicit chain-of-thought (CoT) can improve generalization, they suffer from high inference latency due to lengthy reasoning traces. We propose Fast-ThinkAct, an efficient reasoning framework that achieves compact yet performant planning through verbalizable latent reasoning. Fast-ThinkAct learns to reason efficiently with latent CoTs by distilling from a teacher, driven by a preference-guided objective to align manipulation trajectories that transfers both linguistic and visual planning capabilities for embodied control. This enables reasoning-enhanced policy learning that effectively connects compact reasoning to action execution. Extensive experiments across diverse embodied manipulation and reasoning benchmarks demonstrate that Fast-ThinkAct achieves strong performance with up to 89.3% reduced inference latency over state-of-the-art reasoning VLAs, while maintaining effective long-horizon planning, few-shot adaptation, and failure recovery.",
+    "authors": [
+      "Chi-Pin Huang",
+      "Yunze Man",
+      "Zhiding Yu",
+      "Min-Hung Chen",
+      "Jan Kautz",
+      "Yu-Chiang Frank Wang",
+      "Fu-En Yang"
+    ],
+    "authors_str": "Chi-Pin Huang; Yunze Man; Zhiding Yu; Min-Hung Chen; Jan Kautz; Yu-Chiang Frank Wang; Fu-En Yang",
+    "published": "2026-01-14T18:59:59Z",
+    "summary_len": 1143
+  },
+  "2505.08243v2": {
+    "id": "http://arxiv.org/abs/2505.08243v2",
+    "title": "Training Strategies for Efficient Embodied Reasoning",
+    "summary": "Robot chain-of-thought reasoning (CoT) -- wherein a model predicts helpful intermediate representations before choosing actions -- provides an effective method for improving the generalization and performance of robot policies, especially vision-language-action models (VLAs). While such approaches have been shown to improve performance and generalization, they suffer from core limitations, like needing specialized robot reasoning data and slow inference speeds. To design new robot reasoning approaches that address these issues, a more complete characterization of why reasoning helps policy performance is critical. We hypothesize several mechanisms by which robot reasoning improves policies -- (1) better representation learning, (2) improved learning curricularization, and (3) increased expressivity -- then devise simple variants of robot CoT reasoning to isolate and test each one. We find that learning to generate reasonings does lead to better VLA representations, while attending to the reasonings aids in actually leveraging these features for improved action prediction. Our results provide us with a better understanding of why CoT reasoning helps VLAs, which we use to introduce two simple and lightweight alternative recipes for robot reasoning. Our proposed approaches achieve significant performance gains over non-reasoning policies, state-of-the-art results on the LIBERO-90 benchmark, and a 3x inference speedup compared to standard robot reasoning.",
+    "authors": [
+      "William Chen",
+      "Suneel Belkhale",
+      "Suvir Mirchandani",
+      "Oier Mees",
+      "Danny Driess",
+      "Karl Pertsch",
+      "Sergey Levine"
+    ],
+    "authors_str": "William Chen; Suneel Belkhale; Suvir Mirchandani; Oier Mees; Danny Driess; Karl Pertsch; Sergey Levine",
+    "published": "2025-05-13T05:35:00Z",
+    "summary_len": 1475
+  },
+  "abstracts": {},
+  "searches": {
+    "IE-016": {
+      "title": "Efficient Diffusion Policy via Progressive Latent Refinement",
+      "arxiv": {
+        "query": "ti:\"Efficient Diffusion Policy via Progressive Latent Refinement\"",
+        "totalResults": 0,
+        "hits_returned": 0,
+        "top_entry": null,
+        "all_titles": []
+      },
+      "semantic_scholar": {
+        "error": "HTTP Error 429: ",
+        "total": 0,
+        "hits_returned": 0,
+        "top_entry": null,
+        "all_titles": []
+      },
+      "source_c": {
+        "status": "not searched (cost / auth-free search unavailable)"
+      },
+      "authoritative_sources": 0,
+      "decision": "pending_verification"
+    },
+    "IE-017": {
+      "title": "Anytime-RT: Anytime Vision-Language-Action Control with Controllable Compute Ceiling",
+      "arxiv": {
+        "query": "ti:\"Anytime-RT: Anytime Vision-Language-Action Control with Controllable Compute Ceiling\"",
+        "totalResults": 0,
+        "hits_returned": 0,
+        "top_entry": null,
+        "all_titles": []
+      },
+      "semantic_scholar": {
+        "error": "HTTP Error 429: ",
+        "total": 0,
+        "hits_returned": 0,
+        "top_entry": null,
+        "all_titles": []
+      },
+      "source_c": {
+        "status": "not searched (cost / auth-free search unavailable)"
+      },
+      "authoritative_sources": 0,
+      "decision": "pending_verification"
+    }
+  }
+}

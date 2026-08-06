@@ -329,6 +329,8 @@ ANCHOR_LEGEND   = {"en": "-robot-type-legend", "zh-CN": "-机器人类型图例"
 ANCHOR_TRENDS   = {"en": "-trends--statistics", "zh-CN": "-趋势与统计"}
 ANCHOR_CONTRIB  = {"en": "-contributing", "zh-CN": "-贡献方式"}
 
+VLA_TF_ENUM_YES = {"training_free", "frozen_model_controller_only"}
+
 # ── Load data once (global; only verified + predicted are rendered) ─────────
 rows_verified = _read_csv(CSV_VER)
 rows_pending  = _read_csv(CSV_PEND)
@@ -541,14 +543,12 @@ def build(lang: str) -> str:
 
     if vla_rows:
         cat_counter = Counter(r["Method Category"] for r in vla_rows if r.get("Method Category"))
-        tf_counter  = Counter(r.get("Training-Free?","UNKNOWN") for r in vla_rows)
-        def _tf(counter, keys): return sum(counter.get(k,0) for k in keys)
-        tf_yes     = _tf(tf_counter, ["YES (no training)","YES","YES — fully frozen"])
-        tf_partial = _tf(tf_counter, ["PARTIAL"])
-        tf_no      = _tf(tf_counter, ["NO","NO (light router trained end-to-end)",
-                                      "NO — TBPTT trains recurrent action head",
-                                      "NO (architecture trained from scratch with loop)"])
-        tf_analysis = sum(v for k,v in tf_counter.items() if k.startswith("N/A")) + tf_counter.get("N/A (analysis paper)",0)
+        enum_counter = Counter((r.get("training_requirement") or "unknown").strip() or "unknown" for r in vla_rows)
+        def _e(c, keys): return sum(c.get(k,0) for k in keys)
+        tf_yes     = _e(enum_counter, sorted(VLA_TF_ENUM_YES))
+        tf_partial = 0
+        tf_no      = _e(enum_counter, ["requires_finetuning", "requires_distillation", "trained_architecture"])
+        tf_analysis = _e(enum_counter, ["analysis_only", "reference_backbone"])
 
         L.append(f"| {T['vla_dim']} | {T['vla_bd']} |")
         L.append("|---|---|")
@@ -574,10 +574,14 @@ def build(lang: str) -> str:
                 link = r.get("Paper Link") or ""
                 title = r.get("Title","").split(":")[0].strip()
                 speed = r.get("Reported Speedup") or "—"
-                tf = r.get("Training-Free?","—")
-                if "YES" in tf:         tf_md = T["vla_tf_yes"]
-                elif "NO" in tf:        tf_md = T["vla_tf_no_"]
-                else:                   tf_md = T["vla_tf_other"](tf)
+                tfe = (r.get("training_requirement") or "unknown").strip() or "unknown"
+                tf_display = r.get("Training-Free?", "—") or "—"
+                if tfe in VLA_TF_ENUM_YES:
+                    tf_md = T["vla_tf_yes"]
+                elif tfe in {"requires_finetuning","requires_distillation","trained_architecture"}:
+                    tf_md = T["vla_tf_no_"]
+                else:
+                    tf_md = T["vla_tf_other"](tf_display)
                 cat = r.get("Method Category","—")
                 md_title = f"**{title}**"
                 if link and link not in ("NA","N/A",""): md_title = f"[{md_title}]({link})"

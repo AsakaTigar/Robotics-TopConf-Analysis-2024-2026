@@ -73,9 +73,9 @@ Curated **17 papers** spanning 6 method categories. Source file:
 
 | Dimension | Breakdown |
 |---|---|
-| Training-free compatible | 2 directly usable + 0 partially compatible = **2 training-free baselines** |
-| Requires training (strict upper bound only) | 3 (used for ceiling ablations, not strict comparison) |
-| Analysis / theory papers | 5 |
+| Training-free compatible | 6 directly usable + 0 partially compatible = **6 training-free baselines** |
+| Requires training (strict upper bound only) | 6 (used for ceiling ablations, not strict comparison) |
+| Analysis / theory papers | 3 |
 | Method categories | **CoT Plan Reuse + Modular Parallel** ×1 · **Visual Token / KV Reuse** ×1 · **Joint: LLM prune + Vision select + Action cache** ×1 · **Action-Level Cache / Warm-Start** ×1 · **Dynamic Gating / Compute Scheduling** ×1 · **Empirical Analysis of CoT in VLAs** ×1 · **VLA Backbone** ×1 |
 
 **Key baselines directly referenced by the BudgetLoop proposal:**

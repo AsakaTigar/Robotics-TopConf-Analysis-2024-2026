@@ -71,9 +71,9 @@
 
 | 维度 | 划分 |
 |---|---|
-| 可直接免训练使用 | 2 篇直接可用 + 0 篇部分兼容 = 共 **2 条免训练 baseline** |
-| 需要训练（仅作严格上界参考） | 3 篇（仅用于 ceiling 消融，不作严格对比） |
-| 分析 / 理论类论文 | 5 |
+| 可直接免训练使用 | 6 篇直接可用 + 0 篇部分兼容 = 共 **6 条免训练 baseline** |
+| 需要训练（仅作严格上界参考） | 6 篇（仅用于 ceiling 消融，不作严格对比） |
+| 分析 / 理论类论文 | 3 |
 | 方法类别 | **CoT Plan Reuse + Modular Parallel** ×1 · **Visual Token / KV Reuse** ×1 · **Joint: LLM prune + Vision select + Action cache** ×1 · **Action-Level Cache / Warm-Start** ×1 · **Dynamic Gating / Compute Scheduling** ×1 · **Empirical Analysis of CoT in VLAs** ×1 · **VLA Backbone** ×1 |
 
 **BudgetLoop 提案直接引用的 6 条关键 baseline：**
