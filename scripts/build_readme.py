@@ -20,10 +20,27 @@ from collections import defaultdict, Counter
 _HERE     = os.path.dirname(os.path.abspath(__file__))
 BASE      = os.path.dirname(_HERE) if os.path.basename(_HERE) == "scripts" else _HERE
 
+# ---- Commit-1 partitioned CSVs ------------------------------------------------
+# verified_papers.csv          -> SOLE SOURCE of public paper counts, overview,
+#                                 venue tables, trend charts.
+# pending_verification.csv     -> 19 placeholder + 3 review rows; NOT in stats.
+# predicted_trends.csv         -> 2026-only trend topics; rendered in its own
+#                                 demarcated section; NEVER counted in "Total
+#                                 papers" or venue badges.
+# robotics_papers_...csv       -> master backward-compat source for editors.
+# vla_inference_efficiency.csv -> standalone research track (unchanged).
+# ------------------------------------------------------------------------------
+CSV_VER  = os.path.join(BASE, "datasets", "verified_papers.csv")
+CSV_PEND = os.path.join(BASE, "datasets", "pending_verification.csv")
+CSV_PRED = os.path.join(BASE, "datasets", "predicted_trends.csv")
 CSV_MAIN = os.path.join(BASE, "datasets", "robotics_papers_2024_2026_analysis.csv")
 CSV_VLA  = os.path.join(BASE, "research_tracks", "vla_inference_efficiency_2024_2026.csv")
 OUT_EN   = os.path.join(BASE, "README.md")
 OUT_ZH   = os.path.join(BASE, "README.zh-CN.md")
+
+def _read_csv(p):
+    with open(p, "r", encoding="utf-8-sig", newline="") as f:
+        return list(csv.DictReader(f))
 
 # ── Translation dictionary (UI strings only; CSV content is never translated) ─
 TRANSLATIONS = {
@@ -312,19 +329,39 @@ ANCHOR_LEGEND   = {"en": "-robot-type-legend", "zh-CN": "-机器人类型图例"
 ANCHOR_TRENDS   = {"en": "-trends--statistics", "zh-CN": "-趋势与统计"}
 ANCHOR_CONTRIB  = {"en": "-contributing", "zh-CN": "-贡献方式"}
 
-# ── Load data once (global; never translated) ──────────────────────────────
-rows     = list(csv.DictReader(open(CSV_MAIN, encoding="utf-8-sig")))
-vla_rows = list(csv.DictReader(open(CSV_VLA, encoding="utf-8-sig"))) if os.path.exists(CSV_VLA) else []
+# ── Load data once (global; only verified + predicted are rendered) ─────────
+rows_verified = _read_csv(CSV_VER)
+rows_pending  = _read_csv(CSV_PEND)
+rows_pred     = _read_csv(CSV_PRED)
+rows_all      = _read_csv(CSV_MAIN)     # for pend/pred counters; NOT for stats
+rows          = rows_verified           # **default: use verified only.**
+vla_rows      = _read_csv(CSV_VLA) if os.path.exists(CSV_VLA) else []
 
+# Verified venue buckets (2024 / 2025 real entries only)
 data = defaultdict(lambda: defaultdict(list))
-for r in rows:
+for r in rows_verified:
     data[r["Year"]][r["Venue"]].append(r)
 
-total       = len(rows)
-code_found  = sum(1 for r in rows if r["Code Link"] not in ("NA", "N/A", ""))
-years_present = sorted(data.keys(), reverse=True)
-dq_placeholder = sum(1 for r in rows if "DATA_QUALITY=PLACEHOLDER_AUTHORS" in r.get("Notes",""))
-dq_review      = sum(1 for r in rows if r.get("Notes","").startswith("DATA_QUALITY=REVIEW"))
+# Predicted 2026 trend buckets -> kept strictly separate.
+pred_data = defaultdict(lambda: defaultdict(list))
+for r in rows_pred:
+    pred_data[r["Year"]][r["Venue"]].append(r)
+
+# Counts — PUBLIC counters read from rows_verified (n=78), never rows_all.
+total         = len(rows_verified)
+pending_total = len(rows_pending)
+pred_total    = len(rows_pred)
+code_found    = sum(1 for r in rows_verified if r["Code Link"] not in ("NA", "N/A", ""))
+
+# Years: union of verified real years + 2026 trend section, still in desc order.
+_real_years = sorted(data.keys(), reverse=True)
+years_present = _real_years[:]
+if "2026" not in years_present and rows_pred:
+    years_present = ["2026"] + years_present  # 2026 first (reverse order)
+
+# Internal DQ counters (diagnostic only; no longer rendered publicly).
+dq_placeholder = sum(1 for r in rows_all if "DATA_QUALITY=PLACEHOLDER_AUTHORS" in r.get("Notes",""))
+dq_review      = sum(1 for r in rows_all if r.get("Notes","").startswith("DATA_QUALITY=REVIEW") or "DATA_QUALITY=REVIEW|" in r.get("Notes",""))
 dq_total       = dq_placeholder + dq_review
 
 # ── Natural, language-aware Gap short-form descriptions for the 6 key baselines
@@ -443,8 +480,10 @@ def build(lang: str) -> str:
         badge("IROS", "2024--2025", "green"),
         badge("RSS",  "2024", "orange"),
         badge("CoRL", "2024", "red"),
-        badge("Papers", str(total), "lightgrey"),
-        badge("Code_Links", str(code_found), "brightgreen"),
+        badge("Verified", f"{total}", "brightgreen"),
+        badge("Pending",  f"{pending_total}", "yellow"),
+        badge("Predicted", f"{pred_total}", "informational"),
+        badge("Code_Links", str(code_found), "blueviolet"),
         badge("License", "MIT", "yellow"),
     ]
     L.append(" ".join(venue_badges))
@@ -584,11 +623,15 @@ def build(lang: str) -> str:
             L.append(T["year_trend_title"].format(y=year)); L.append("")
             for ln in T["year_trend_note"].splitlines(): L.append(f"> {ln}")
             L.append("")
+            # Commit-1 hard boundary: trend section reads strictly from
+            # predicted_trends.csv, NEVER from rows_verified / rows_all.
+            year_bucket = pred_data.get(year, {})
         else:
             L.append(T["year_title"].format(y=year)); L.append("")
+            year_bucket = data.get(year, {})
 
-        for venue in sorted(data[year].keys()):
-            venue_rows = data[year][venue]
+        for venue in sorted(year_bucket.keys()):
+            venue_rows = year_bucket[venue]
             anchor_id = venue.lower().replace(" ", "-").replace("(","").replace(")","")
             L.append(f'<a name="{anchor_id}-{year}"></a>'); L.append("")
             vc = {"ICRA": "0065BD", "IROS": "009E4D", "RSS": "E57200", "CoRL": "C00000"}.get(venue.split()[0], "555555")

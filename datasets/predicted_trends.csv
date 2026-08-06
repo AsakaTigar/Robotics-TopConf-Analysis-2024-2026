@@ -1,0 +1,21 @@
+﻿Year,Venue,Title,Authors,Affiliation,Paper Link,Robot Type,Code Link,Notes
+2026,ICRA,Human-Robot Interaction,N/A (Trend entry),N/A,N/A,协作机器人,N/A,Trend: Increased focus on social intelligence and natural language communication. | Desc: Enhancing seamless collaboration between humans and robots in shared environments.
+2026,ICRA,Autonomous Navigation,N/A (Trend entry),N/A,N/A,移动机器人/无人机,N/A,"Trend: Integration of foundation models for semantic understanding and planning. | Desc: Robust navigation in complex, dynamic, and unstructured environments."
+2026,ICRA,Machine Learning in Robotics,N/A (Trend entry),N/A,N/A,通用,N/A,Trend: End-to-end learning from demonstration and self-supervised improvement. | Desc: Leveraging deep learning and reinforcement learning for robot control and perception.
+2026,ICRA,Healthcare Robotics,N/A (Trend entry),N/A,N/A,医疗机器人,N/A,"Trend: Miniaturization and precision control in surgical procedures. | Desc: Robotics for surgery, rehabilitation, and elderly care."
+2026,ICRA,Sustainable Automation,N/A (Trend entry),N/A,N/A,农业/环境机器人,N/A,Trend: Energy-efficient designs and long-term autonomy in the wild. | Desc: Robotic solutions for environmental monitoring and sustainable agriculture.
+2026,ICRA,Multi-Robot Systems,N/A (Trend entry),N/A,N/A,群体机器人,N/A,"Trend: Distributed coordination with formal correctness guarantees. | Desc: Swarm algorithms for search, coverage, and transport."
+2026,ICRA,Robotic Vision,N/A (Trend entry),N/A,N/A,通用视觉,N/A,"Trend: VLA / open-vocabulary perception replaces task-specific vision backbones. | Desc: Emergent research track, see research_tracks/vla_inference_efficiency_2024_2026.csv"
+2026,ICRA,Field Robotics,N/A (Trend entry),N/A,N/A,野外机器人,N/A,"Trend: Long-term autonomy in outdoor, unstructured environments. | Desc: Agriculture, mining, planetary exploration."
+2026,ICRA,Soft Robotics,N/A (Trend entry),N/A,N/A,软体机器人,N/A,"Trend: Physics-informed sim + sim-to-real for highly deformable bodies. | Desc: Wearables, grippers, medical devices."
+2026,ICRA,Bio-inspired Robotics,N/A (Trend entry),N/A,N/A,仿生机器人,N/A,"Trend: Embodied intelligence from animal locomotion and morphologies. | Desc: Quadruped, flapping-wing, humanoid design principles."
+2026,ICRA,Aerial Robotics,N/A (Trend entry),N/A,N/A,UAV/无人机,N/A,"Trend: Beyond-visual-range autonomy + event-based sensing. | Desc: Delivery, inspection, disaster response."
+2026,ICRA,Legged & Bio-inspired Locomotion,N/A (Trend entry),N/A,N/A,四足机器人,N/A,"Trend: Outdoor aggressive maneuvers, multi-contact, fall recovery. | Desc: Real-world hardening of legged platforms."
+2026,ICRA,Manipulation & Grasping,N/A (Trend entry),N/A,N/A,机械臂/灵巧手,N/A,Trend: Dexterous in-hand + vision-language-action (VLA) closed-loop. | Desc: Key direction: BudgetLoop-VLA training-free compute reallocation.
+2026,ICRA,Search and Rescue,N/A (Trend entry),N/A,N/A,搜救机器人,N/A,"Trend: Heterogeneous teams with shared semantic world models. | Desc: Post-disaster, CBRN scenarios."
+2026,ICRA,Micro/Nano Robotics,N/A (Trend entry),N/A,N/A,微纳机器人,N/A,"Trend: Magnetic/acoustic swarm control for biomedical cargo. | Desc: In vivo, lab-on-a-chip."
+2026,IROS,VLA Inference Efficiency (Emerging Topic),N/A (Trend entry),N/A,N/A,通用,N/A,"Trend: Training-free caching, KV reuse, looped transformers for 1B-parameter end-side control. | Desc: Full track in research_tracks/vla_inference_efficiency_2024_2026.csv. Proposal: proposals/BUDGETLOOP_VLA.md"
+2026,IROS,Causal Reasoning for Robotics Decisions,N/A (Trend entry),N/A,N/A,通用,N/A,Trend: Causal graphs + counterfactual sim for OOD generalization.
+2026,IROS,Calibration-Free Robot Perception,N/A (Trend entry),N/A,N/A,通用,N/A,Trend: Foundation model features bypass hand-designed calibration pipelines.
+2026,IROS,Robustness Under Distribution Shift,N/A (Trend entry),N/A,N/A,通用,N/A,"Trend: Conformal prediction, test-time adaptation replacing closed-set eval."
+2026,IROS,Data Engine for Robot Learning,N/A (Trend entry),N/A,N/A,通用,N/A,Trend: Human-free data generation loops + failure replay + diversity scoring.

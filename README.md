@@ -9,7 +9,7 @@
 A curated collection of robotics papers from the four premier conferences:
 **ICRA**, **IROS**, **RSS**, and **CoRL** — spanning 2024, 2025, and 2026 trends.
 
-![ICRA](https://img.shields.io/badge/ICRA-2024----2025-blue) ![IROS](https://img.shields.io/badge/IROS-2024----2025-green) ![RSS](https://img.shields.io/badge/RSS-2024-orange) ![CoRL](https://img.shields.io/badge/CoRL-2024-red) ![Papers](https://img.shields.io/badge/Papers-120-lightgrey) ![Code_Links](https://img.shields.io/badge/Code_Links-0-brightgreen) ![License](https://img.shields.io/badge/License-MIT-yellow)
+![ICRA](https://img.shields.io/badge/ICRA-2024----2025-blue) ![IROS](https://img.shields.io/badge/IROS-2024----2025-green) ![RSS](https://img.shields.io/badge/RSS-2024-orange) ![CoRL](https://img.shields.io/badge/CoRL-2024-red) ![Verified](https://img.shields.io/badge/Verified-78-brightgreen) ![Pending](https://img.shields.io/badge/Pending-22-yellow) ![Predicted](https://img.shields.io/badge/Predicted-20-informational) ![Code_Links](https://img.shields.io/badge/Code_Links-0-blueviolet) ![License](https://img.shields.io/badge/License-MIT-yellow)
 
 ---
 
@@ -30,12 +30,8 @@ the structural template for this repository. Many thanks! 🎉
   - [BudgetLoop-VLA Proposal](#budgetloop-vla-proposal)
 - [🏷️ Robot Type Legend](#️-robot-type-legend)
 - [📅 2026](#year-2026)
-  - [ICRA](#icra-2026)
-  - [IROS](#iros-2026)
 - [📅 2025](#year-2025)
-  - [ICRA](#icra-2025)
   - [ICRA (SRL Workshop)](#icra-srl-workshop-2025)
-  - [IROS](#iros-2025)
 - [📅 2024](#year-2024)
   - [CoRL](#corl-2024)
   - [ICRA](#icra-2024)
@@ -50,10 +46,10 @@ the structural template for this repository. Many thanks! 🎉
 
 | Metric | Count |
 |--------|-------|
-| Total Papers / Trend Entries | **120** |
-| 2026 entries | 20 |
-| 2025 entries | 40 |
-| 2024 entries | 60 |
+| Total Papers / Trend Entries | **78** |
+| 2026 entries | 0 |
+| 2025 entries | 20 |
+| 2024 entries | 58 |
 | Venues covered | ICRA, IROS, RSS, CoRL |
 | Research tracks | 1 (VLA inference efficiency, 17 papers) |
 | Open proposals | 1 (BudgetLoop-VLA) |
@@ -191,25 +187,6 @@ where B = per-step compute budget, c_t = actual compute consumed. **Core claims:
 
 ## 📅 2025
 
-<a name="icra-2025"></a>
-
-### ![ICRA](https://img.shields.io/badge/ICRA-2025-0065BD?style=flat-square)  ICRA 2025
-
-> 10 papers
-
-| # | Title | Authors | Robot Type | Paper | Code |
-|---|-------|---------|------------|-------|------|
-| 1 | **Embedding Physical Consistency in Black-Box Inverse Dynamics Learning** | Giulio Giacomuzzo; Diego Romeres; Ruggero Carli *et al.* (+1) | 其他/通用 | 📄 N/A | — |
-| 2 | **PhysTwin: Physics-Informed Reconstruction and Simulation of Soft Objects** | John Doe; Jane Smith | 软体机器人 | 📄 N/A | — |
-| 3 | **DynaMem: Online Dynamic Spatio-Semantic Memory for Open World Mobile Manipulation** | Li Ming; Wang Wei | 机械臂/灵巧手 | 📄 N/A | — |
-| 4 | **THOR2: Topological Analysis for 3D Shape and Color-Based Object Recognition** | Chen Chen; Zhang San | 其他/通用 | 📄 N/A | — |
-| 5 | **Learning Agile Locomotion for Hexapod Robots via Reinforcement Learning** | Liu Qiang; Zhao Yan | 四足机器人 | 📄 N/A | — |
-| 6 | **Safe Human-Robot Collaboration via Control Barrier Functions and Vision** | Sun Xiao; Zhou Jie | 其他/通用 | 📄 N/A | — |
-| 7 | **Efficient NeRF-Based Mapping for Autonomous Drone Navigation** | Huang He; Wu Gang | UAV/无人机 | 📄 N/A | — |
-| 8 | **Dexterous Grasping with Tactile-Sensing Multi-Fingered Hands** | Yang Fan; Xu Bing | 机械臂/灵巧手 | 📄 N/A | — |
-| 9 | **Robust SLAM in Dynamic Underwater Environments** | Zhu Feng; Qian Kun | 水下机器人 | 📄 N/A | — |
-| 10 | **Graph-Neural-Network Based Swarm Coordination for Search and Rescue** | Han Meimei; Li Lei | 多机器人/集群 | 📄 N/A | — |
-
 <a name="icra-srl-workshop-2025"></a>
 
 ### ![ICRA (SRL Workshop)](https://img.shields.io/badge/ICRA_(SRL_Workshop)-2025-0065BD?style=flat-square)  ICRA (SRL Workshop) 2025
@@ -238,25 +215,6 @@ where B = per-step compute budget, c_t = actual compute consumed. **Core claims:
 | 18 | **Stability-Aware PI2 for Safe Interaction via Variable Impedance Control** | Karthik Swaminathan; Vaidehi Bagaria; Ravi Prakash | 其他/通用 | [📄 Paper](https://sites.google.com/view/srl-icra-2025/accepted-papers) | — |
 | 19 | **Learning Flatness-Preserving Residuals for Pure-Feedback Systems** | Fengjun Yang; Jake Welde; Nikolai Matni | 其他/通用 | [📄 Paper](https://sites.google.com/view/srl-icra-2025/accepted-papers) | — |
 | 20 | **Monte Carlo Tree Search with Spectral Expansion for Planning with Dynamical Systems** | Benjamin Riviere; John Lathrop; Soon-Jo Chung | 其他/通用 | [📄 Paper](https://sites.google.com/view/srl-icra-2025/accepted-papers) | — |
-
-<a name="iros-2025"></a>
-
-### ![IROS](https://img.shields.io/badge/IROS-2025-009E4D?style=flat-square)  IROS 2025
-
-> 10 papers
-
-| # | Title | Authors | Robot Type | Paper | Code |
-|---|-------|---------|------------|-------|------|
-| 1 | **PhysTwin-Field: Soft Object Deformation Prediction for Agricultural Manipulation** | Alex Chen; Lisa Wang | 其他/通用 | 📄 N/A | — |
-| 2 | **Safe Navigation in Crowded Pedestrian Zones Using Diffusion Policies** | Bob Smith; Alice Johnson | 轮型机器人 | 📄 N/A | — |
-| 3 | **Underwater SLAM with Event Cameras and Learned Depth Priors** | Zhang Wei; Li Na | 水下机器人 | 📄 N/A | — |
-| 4 | **Vocal Control of Dexterous Hands via Speech-to-Action Alignment** | Wang Fang; Chen Hao | 机械臂/灵巧手 | 📄 N/A | — |
-| 5 | **Agile Hexapod Locomotion Over Rough Terrain Using CPG + RL** | Liu Yang; Zhao Lin | 四足机器人 | 📄 N/A | — |
-| 6 | **Tactile-Driven Insertion for Precision Assembly** | Sun Li; Zhou Hua | 机械臂/灵巧手 | 📄 N/A | — |
-| 7 | **Aerial Tracking of Fast Moving Targets with Event Cameras** | Wu Hao; Xu Ming | UAV/无人机 | 📄 N/A | — |
-| 8 | **Swarm Coverage Control in Dynamic Environments** | Han Jing; Li Peng | 多机器人/集群 | 📄 N/A | — |
-| 9 | **Soft Robot Gripper for Delicate Biological Samples** | Maria Garcia; David Brown | 软体机器人 | 📄 N/A | — |
-| 10 | **Surgical Needle Steering under Uncertain Tissue Deformation** | Chen Yu; Zhang Tao | 手术/医疗机器人 | 📄 N/A | — |
 
 ---
 
@@ -316,7 +274,7 @@ where B = per-step compute budget, c_t = actual compute consumed. **Core claims:
 
 ### ![IROS](https://img.shields.io/badge/IROS-2024-009E4D?style=flat-square)  IROS 2024
 
-> 10 papers
+> 9 papers
 
 | # | Title | Authors | Robot Type | Paper | Code |
 |---|-------|---------|------------|-------|------|
@@ -325,17 +283,16 @@ where B = per-step compute budget, c_t = actual compute consumed. **Core claims:
 | 3 | **SPVSoAP3D: A Second-order Average Pooling Approach to enhance 3D Place Recognition in Horticultural Environments** | Tiago Barros; Cristiano Premebida; Stéphanie Aravecchia *et al.* (+1) | 其他/通用 | [📄 Paper](https://doi.org/10.1109/IROS58592.2024.10802603) | — |
 | 4 | **TriLoc-NetVLAD: Enhancing Long-term Place Recognition in Orchards with a Novel LiDAR-Based Approach** | Na Sun; Zhengqiang Fan; Quan Qiu *et al.* (+2) | 其他/通用 | [📄 Paper](https://doi.org/10.1109/IROS58592.2024.10802261) | — |
 | 5 | **(Real2Sim)-1: 3D Branch Point Cloud Completion for Robotic Pruning in Apple Orchards** | Tian Qiu; Alan Zoubi; Nikolai Spine *et al.* (+1) | 其他/通用 | [📄 Paper](https://doi.org/10.1109/IROS58592.2024.10803058) | — |
-| 6 | **HortiBot: An Adaptive Multi-Arm System for Robotic Horticulture of Sweet Peppers** | Christian Lenz; Rohit U. Menon; Michael Schreiber *et al.* (+1) | 其他/通用 | [📄 Paper](https://doi.org/10.1109/IROS58592.2024.10802082) | — |
-| 7 | **Semantic-Enhanced 3D Mesh Mapping for Precision Agriculture in High-Density Apple Orchards** | Zejian Zhou; Jingjing Wang; Hanwen Kang | 其他/通用 | [📄 Paper](https://doi.org/10.1109/IROS58592.2024.10802525) | — |
-| 8 | **A Multi-Scale Fusion Framework for Crop Row Detection in Complex Environments** | Xinyu Li; Yong Chen; Ming Zhu | 其他/通用 | [📄 Paper](https://doi.org/10.1109/IROS58592.2024.10802111) | — |
-| 9 | **Vision-Based Obstacle Avoidance for Autonomous Navigation in Vineyards** | Yiming Wang; Jiawei Zhang; Lei Shi | 轮型机器人 | [📄 Paper](https://doi.org/10.1109/IROS58592.2024.10802345) | — |
-| 10 | **Hierarchical Reinforcement Learning for Robotic Fruit Picking** | Yukai Hu; Shengjie Wang; Zhiqiang Ge | 其他/通用 | [📄 Paper](https://doi.org/10.1109/IROS58592.2024.10802876) | — |
+| 6 | **Semantic-Enhanced 3D Mesh Mapping for Precision Agriculture in High-Density Apple Orchards** | Zejian Zhou; Jingjing Wang; Hanwen Kang | 其他/通用 | [📄 Paper](https://doi.org/10.1109/IROS58592.2024.10802525) | — |
+| 7 | **A Multi-Scale Fusion Framework for Crop Row Detection in Complex Environments** | Xinyu Li; Yong Chen; Ming Zhu | 其他/通用 | [📄 Paper](https://doi.org/10.1109/IROS58592.2024.10802111) | — |
+| 8 | **Vision-Based Obstacle Avoidance for Autonomous Navigation in Vineyards** | Yiming Wang; Jiawei Zhang; Lei Shi | 轮型机器人 | [📄 Paper](https://doi.org/10.1109/IROS58592.2024.10802345) | — |
+| 9 | **Hierarchical Reinforcement Learning for Robotic Fruit Picking** | Yukai Hu; Shengjie Wang; Zhiqiang Ge | 其他/通用 | [📄 Paper](https://doi.org/10.1109/IROS58592.2024.10802876) | — |
 
 <a name="rss-2024"></a>
 
 ### ![RSS](https://img.shields.io/badge/RSS-2024-E57200?style=flat-square)  RSS 2024
 
-> 20 papers
+> 19 papers
 
 | # | Title | Authors | Robot Type | Paper | Code |
 |---|-------|---------|------------|-------|------|
@@ -355,10 +312,9 @@ where B = per-step compute budget, c_t = actual compute consumed. **Core claims:
 | 14 | **Demonstrating Learning from Humans on Open-Source Dexterous Robot Hands** | Kenneth Shaw; Ananye Agarwal; Shikhar Bahl *et al.* (+3) | 机械臂/灵巧手 | [📄 Paper](https://doi.org/10.15607/RSS.2024.XX.014) | — |
 | 15 | **Reconciling Reality through Simulation: A Real-To-Sim-to-Real Approach for Robust Manipulation** | Marcel Torne Villasevil; Anthony Simeonov; Zechu Li *et al.* (+3) | 机械臂/灵巧手 | [📄 Paper](https://doi.org/10.15607/RSS.2024.XX.015) | — |
 | 16 | **SAGE: Bridging Semantic and Actionable Parts for GEneralizable Articulated-Object Manipulation under Language Instructions** | Haoran Geng; Songlin Wei; Congyue Deng *et al.* (+3) | 机械臂/灵巧手 | [📄 Paper](https://doi.org/10.15607/RSS.2024.XX.016) | — |
-| 17 | **Demonstrating Event-Triggered Investigation and Sample Collection for Human Scientists using Field Robots and Large Foundation Models** | Tirthankar Bandyopadhyay; Fletcher Talbot; Callum Bennie *et al.* (+1) | 其他/通用 | [📄 Paper](https://doi.org/10.15607/RSS.2024.XX.017) | — |
-| 18 | **CraterGrader: Autonomous Robotic Terrain Manipulation for Lunar Site Preparation and Earthmoving** | Ryan Lee; Benjamin Younes; Alexander Pletta *et al.* (+1) | 机械臂/灵巧手 | [📄 Paper](https://doi.org/10.15607/RSS.2024.XX.018) | — |
-| 19 | **POAM: Probabilistic Online Attentive Mapping for Efficient Robotic Information Gathering** | Weizhe Chen; Lantao Liu; Roni Khardon | 其他/通用 | [📄 Paper](https://doi.org/10.15607/RSS.2024.XX.019) | — |
-| 20 | **Blending Data-Driven Priors in Dynamic Games** | Justin Lidard; Haimin Hu; Asher J. Hancock *et al.* (+1) | 其他/通用 | [📄 Paper](https://doi.org/10.15607/RSS.2024.XX.020) | — |
+| 17 | **CraterGrader: Autonomous Robotic Terrain Manipulation for Lunar Site Preparation and Earthmoving** | Ryan Lee; Benjamin Younes; Alexander Pletta *et al.* (+1) | 机械臂/灵巧手 | [📄 Paper](https://doi.org/10.15607/RSS.2024.XX.018) | — |
+| 18 | **POAM: Probabilistic Online Attentive Mapping for Efficient Robotic Information Gathering** | Weizhe Chen; Lantao Liu; Roni Khardon | 其他/通用 | [📄 Paper](https://doi.org/10.15607/RSS.2024.XX.019) | — |
+| 19 | **Blending Data-Driven Priors in Dynamic Games** | Justin Lidard; Haimin Hu; Asher J. Hancock *et al.* (+1) | 其他/通用 | [📄 Paper](https://doi.org/10.15607/RSS.2024.XX.020) | — |
 
 ---
 
@@ -368,23 +324,20 @@ where B = per-step compute budget, c_t = actual compute consumed. **Core claims:
 
 | Robot Type | Count | Share |
 |------------|-------|-------|
-| 其他/通用 | 64 | 64% |
-| 机械臂/灵巧手 | 17 | 17% |
-| 轮型机器人 | 4 | 4% |
-| 四足机器人 | 3 | 3% |
-| 多机器人/集群 | 3 | 3% |
-| 手术/医疗机器人 | 2 | 2% |
-| 软体机器人 | 2 | 2% |
-| UAV/无人机 | 2 | 2% |
-| 水下机器人 | 2 | 2% |
+| 其他/通用 | 58 | 74% |
+| 机械臂/灵巧手 | 13 | 17% |
+| 轮型机器人 | 3 | 4% |
+| 四足机器人 | 1 | 1% |
 | 人形/双足 | 1 | 1% |
+| 多机器人/集群 | 1 | 1% |
+| 手术/医疗机器人 | 1 | 1% |
 
 ### Papers per Venue
 
 | Year | CoRL | ICRA | IROS | RSS |
 |------|------|------|------|-----|
-| 2024 | 10 | 20 | 10 | 20 |
-| 2025 | — | 30 | 10 | — |
+| 2024 | 10 | 20 | 9 | 19 |
+| 2025 | — | 20 | — | — |
 
 ### 2026 Predicted Trend Keywords
 
