@@ -1,152 +1,150 @@
 <div align="right">
 
-![Language](https://img.shields.io/badge/Language-EN_·_英文-blue) &nbsp;&nbsp; ![Switch](https://img.shields.io/badge/Switch-EN↔中文-lightgrey) &nbsp;&nbsp; [→ **切换到简体中文**](README.zh-CN.md)
+![语言](https://img.shields.io/badge/语言-中文_·_CN-red) &nbsp;&nbsp; ![Switch](https://img.shields.io/badge/Switch-EN↔中文-lightgrey) &nbsp;&nbsp; [→ **Switch to English**](README.md)
 
 </div>
 
-# 🤖 Robotics Top Conference Papers — 2024-2026
+# 🤖 机器人顶会论文精选 — 2024–2026
 
-A curated collection of robotics papers from the four premier conferences:
-**ICRA**, **IROS**, **RSS**, and **CoRL** — spanning 2024, 2025, and 2026 trends.
+精选四大机器人顶会（**ICRA**、**IROS**、**RSS**、**CoRL**）论文，覆盖 2024–2026 研究趋势。
 
-![ICRA](https://img.shields.io/badge/ICRA-2024----2025-blue) ![IROS](https://img.shields.io/badge/IROS-2024----2025-green) ![RSS](https://img.shields.io/badge/RSS-2024-orange) ![CoRL](https://img.shields.io/badge/CoRL-2024-red) ![Papers](https://img.shields.io/badge/Papers-120-lightgrey) ![Code_Links](https://img.shields.io/badge/Code_Links-0-brightgreen) ![Placeholder_Papers](https://img.shields.io/badge/Placeholder_Papers-19-critical) ![Review_Flagged](https://img.shields.io/badge/Review_Flagged-3-yellow) ![License](https://img.shields.io/badge/License-MIT-yellow)
+![ICRA](https://img.shields.io/badge/ICRA-2024----2025-blue) ![IROS](https://img.shields.io/badge/IROS-2024----2025-green) ![RSS](https://img.shields.io/badge/RSS-2024-orange) ![CoRL](https://img.shields.io/badge/CoRL-2024-red) ![Papers](https://img.shields.io/badge/Papers-120-lightgrey) ![Code_Links](https://img.shields.io/badge/Code_Links-0-brightgreen) ![占位作者条](https://img.shields.io/badge/占位作者条-19-critical) ![待复核条](https://img.shields.io/badge/待复核条-3-yellow) ![License](https://img.shields.io/badge/License-MIT-yellow)
 
-> ⚠️ **Data Quality Notice**
-> This dataset carries **22 flagged entries**: **19 with placeholder authors** (John Doe / Zhang San patterns — injected before 2025 venues were indexed) and **3 flagged for review**. All are marked ⚠️/🟡 in paper tables and carry an `AUDIT_REF` in the CSV `Notes` column. **Full audit**: [`data_quality/AUDIT_2024_2026.md`](data_quality/AUDIT_2024_2026.md).
-
----
-
-## 🙏 Acknowledgement
-
-This project is inspired by and references the excellent work:
-**[Embodied-AI-Paper-TopConf](https://github.com/Songwxuan/Embodied-AI-Paper-TopConf)** by [@Songwxuan](https://github.com/Songwxuan).
-Their methodology for curating and organizing top-conference robotics / embodied AI papers provided
-the structural template for this repository. Many thanks! 🎉
+> ⚠️ **数据质量说明**
+> 本数据集共标记 **22 条异常条目**：其中 **19 条含占位作者**（John Doe / 张三模式 — 在 2025 年会议正式录用名单发布前为占位注入）以及 **3 条待复核**。所有异常条目在论文表中以 ⚠️/🟡 标出，并在 CSV 的 `Notes` 列附 `AUDIT_REF` 编号。**完整审计**：[`data_quality/AUDIT_2024_2026.md`](data_quality/AUDIT_2024_2026.md)。
 
 ---
 
-## 📋 Table of Contents
+## 🙏 致谢
 
-- [📊 Overview](#-overview)
-- [⚠️ Data Quality Status](#️-data-quality-status)
-- [🔬 Research Tracks](#-research-tracks)
-  - [VLA Inference Efficiency (2024–2026)](#vla-inference-efficiency-20242026)
-  - [BudgetLoop-VLA Proposal](#budgetloop-vla-proposal)
-- [🏷️ Robot Type Legend](#️-robot-type-legend)
-- [📅 2024](#year-2024)
+本项目受并引用以下优秀工作的启发：
+[@Songwxuan](https://github.com/Songwxuan) 的 **[Embodied-AI-Paper-TopConf](https://github.com/Songwxuan/Embodied-AI-Paper-TopConf)**。
+其精选并组织顶会机器人 / 具身智能论文的方法论为本仓库提供了结构模板，特此致谢！🎉
+
+---
+
+## 📋 目录
+
+- [📊 概览](#-概览)
+- [⚠️ 数据质量状态](#️-数据质量状态)
+- [🔬 研究专题](#-研究专题)
+  - [VLA 推理效率专题（2024–2026）](#vla-推理效率专题20242026)
+  - [BudgetLoop-VLA 提案](#budgetloop-vla-提案)
+- [🏷️ 机器人类型图例](#️-机器人类型图例)
+- [📅 2024 年](#year-2024)
   - [CoRL](#corl-2024)
   - [ICRA](#icra-2024)
   - [IROS](#iros-2024)
   - [RSS](#rss-2024)
-- [📅 2025](#year-2025)
+- [📅 2025 年](#year-2025)
   - [ICRA](#icra-2025)
   - [ICRA (SRL Workshop)](#icra-srl-workshop-2025)
   - [IROS](#iros-2025)
-- [📅 2026](#year-2026)
+- [📅 2026 年](#year-2026)
   - [ICRA](#icra-2026)
   - [IROS](#iros-2026)
-- [📈 Trends & Statistics](#-trends--statistics)
-- [🤝 Contributing](#-contributing)
+- [📈 趋势与统计](#-趋势与统计)
+- [🤝 贡献方式](#-贡献方式)
 
 ---
 
-## 📊 Overview
+## 📊 概览
 
-| Metric | Count |
+| 指标 | 数量 |
 |--------|-------|
-| Total Papers / Trend Entries | **120** |
-| 2024 entries | 60 |
-| 2025 entries | 40 |
-| 2026 entries | 20 |
-| Venues covered | ICRA, IROS, RSS, CoRL |
-| Research tracks | 1 (VLA inference efficiency, 17 papers) |
-| Open proposals | 1 (BudgetLoop-VLA) |
-| Papers with code links | 0 |
-| ⚠️ Data-quality flagged | 22 (19 placeholder authors, 3 review) |
+| 论文 / 趋势条目总数 | **120** |
+| 2024 年条目 | 60 |
+| 2025 年条目 | 40 |
+| 2026 年条目 | 20 |
+| 覆盖会议 | ICRA, IROS, RSS, CoRL |
+| 研究专题数 | 1 个（VLA 推理效率，共 17 篇） |
+| 开放提案数 | 1 个（BudgetLoop-VLA） |
+| 含代码链接的论文 | 0 |
+| ⚠️ 数据质量异常标记 | 22（占位作者 19 条，待复核 3 条） |
 
 ---
 
-## ⚠️ Data Quality Status
+## ⚠️ 数据质量状态
 
-| Severity | Tag | Count | Resolution |
+| 严重度 | 标签 | 条数 | 解决方案 |
 |---|---|---|---|
-| 🔴 HIGH | `DATA_QUALITY=PLACEHOLDER_AUTHORS` | **19** | Marked in CSV `Notes`; carrying `AUDIT_REF`; to be cross-replaced once 2025 proceedings publish. |
-| 🟡 MEDIUM | `DATA_QUALITY=REVIEW` | **3** | Type-classification or authorship-truncation review; not suppressed. |
-| ✅ CLEAN | (unflagged) | **98** | Treated as ground truth for stats / tables. |
+| 🔴 HIGH | `DATA_QUALITY=PLACEHOLDER_AUTHORS` | **19** | 已在 CSV `Notes` 标记并附带 `AUDIT_REF`；待 2025 年会议论文集正式发布后交叉替换真实作者。 |
+| 🟡 MEDIUM | `DATA_QUALITY=REVIEW` | **3** | 类型分类或作者截断待复核；未在表格中视觉抑制。 |
+| ✅ CLEAN | (unflagged) | **98** | 视作统计 / 表格的可靠数据。 |
 
-Full itemized list with rationale, cross-references to SRL Workshop real-author counterparts, and remediation plan:
+逐条带理由的完整清单（含与 ICRA SRL Workshop 真实作者的交叉映射与修复计划）：
 
 → **[`data_quality/AUDIT_2024_2026.md`](data_quality/AUDIT_2024_2026.md)**
 
-Affected rows in paper tables carry a ⚠️ prefix. Do not cite the 🔴 placeholder-author entries in academic writing before verification.
+论文表中受影响行以 ⚠️ 前缀标出。🔴 占位作者条未经验证前请勿用于学术写作引用。
 
 ---
 
 <a name="research-tracks"></a>
 
-## 🔬 Research Tracks
+## 🔬 研究专题
 
-Dedicated deep-dives on fast-moving topics **outside** the ICRA/IROS/RSS/CoRL four-venue main CSV — including arXiv preprints, non-robotics venues (NeurIPS/ICML), and pure Transformer architecture work that informs robotics methods.
+本板块收录 **不属于** ICRA/IROS/RSS/CoRL 四大会主表、但发展迅速的重要方向：包括 arXiv 预印本、非机器人会议（NeurIPS/ICML）论文、以及对机器人方法有直接启发的纯 Transformer 架构工作。
 
-<a name="vla-inference-efficiency-20242026"></a>
+<a name="vla-推理效率专题20242026"></a>
 
-### 🚀 VLA Inference Efficiency — Training-Free Acceleration (2024–2026)
+### 🚀 VLA 推理效率 — 免训练加速专题（2024–2026）
 
-Curated **17 papers** spanning 6 method categories. Source file:
+共收录 **17 篇论文**，覆盖 6 大类方法。源文件：
 
 → **[`research_tracks/vla_inference_efficiency_2024_2026.csv`](research_tracks/vla_inference_efficiency_2024_2026.csv)**
 
-| Dimension | Breakdown |
+| 维度 | 分布 |
 |---|---|
-| Training-free compatible | 2 directly usable + 0 partial = **2 training-free baseline pool** |
-| Trained (strict upper bounds only) | 3 (used for ceiling ablations not strict comparison) |
-| Analysis / theory papers | 5 |
-| Method categories | **CoT Plan Reuse + Modular Parallel** ×1 · **Visual Token / KV Reuse** ×1 · **Joint: LLM prune + Vision select + Action cache** ×1 · **Action-Level Cache / Warm-Start** ×1 · **Dynamic Gating / Compute Scheduling** ×1 · **Empirical Analysis of CoT in VLAs** ×1 · **VLA Backbone** ×1 |
+| 可直接免训练使用 | 2 篇可直接用 + 0 篇部分可用 = 共 **2 篇免训练 baseline 池** |
+| 需要训练（仅作严格上界） | 3 篇（仅用于 ceiling 消融，不作严格对比） |
+| 分析 / 理论类论文 | 5 |
+| 方法类别 | **CoT Plan Reuse + Modular Parallel** ×1 · **Visual Token / KV Reuse** ×1 · **Joint: LLM prune + Vision select + Action cache** ×1 · **Action-Level Cache / Warm-Start** ×1 · **Dynamic Gating / Compute Scheduling** ×1 · **Empirical Analysis of CoT in VLAs** ×1 · **VLA Backbone** ×1 |
 
-**Key baselines referenced by the BudgetLoop proposal:**
+**BudgetLoop 提案引用的关键 baseline：**
 
-| # | Work | Category | Training-Free? | Reported speedup | Gap BudgetLoop fills |
+| # | 工作 | 方法类别 | 免训练? | 报告加速比 | BudgetLoop 填补的缺口 |
 |---|---|---|---|---|---|
-| 1 | [**Fast ECoT**](https://arxiv.org/abs/2506.07639) | CoT Plan Reuse + Modular Parallel | ✅ YES | ~1.5x–3x end-to-end | Fast ECoT saves compute but discards it — BudgetLoop banks it and real |
-| 2 | [**VLA-Cache**](https://arxiv.org/abs/2502.02175) | Visual Token / KV Reuse | ✅ YES | — but significant vision-layer FLOPs reduction | VLA-Cache saves compute and discards it — BudgetLoop banks it; VLA-Cac |
-| 3 | [**EfficientVLA**](https://arxiv.org/abs/2506.10100v1) | Joint: LLM prune + Vision select + Action cache | ✅ YES | 1.93× end-to-end speed; FLOPs 28.9% of baseline | Their method is fixed-recipe — no dynamic reallocation across steps; n |
-| 4 | [**ActionCache**](https://arxiv.org/abs/2607.06370) | Action-Level Cache / Warm-Start | ✅ YES | π0: up to 11.75×; GR00T-N1.6: up to 34.43× on action-head | ActionCache accelerates but does not coordinate with vision/CoT caches |
-| 5 | [**ElegantVLA**](https://arxiv.org/abs/2605.29438) | Dynamic Gating / Compute Scheduling | ✅ YES | — | ElegantVLA has no compute bank (b_t); no forced latency ceiling; no lo |
-| 6 | [**Training-Free Looped Transformers**](https://arxiv.org/abs/2605.23872) | Frozen Mid-Stack Loop (training-free) | ✅ YES | N/A — accuracy-FLOPs tradeoff downstream | Does not operate on VLAs; does not combine with caching; no per-step d |
+| 1 | [**Fast ECoT**](https://arxiv.org/abs/2506.07639) | CoT Plan Reuse + Modular Parallel | ✅ 是 | ~1.5x–3x end-to-end | Fast ECoT saves compute but discards it — BudgetLoop banks it and real |
+| 2 | [**VLA-Cache**](https://arxiv.org/abs/2502.02175) | Visual Token / KV Reuse | ✅ 是 | — but significant vision-layer FLOPs reduction | VLA-Cache saves compute and discards it — BudgetLoop banks it; VLA-Cac |
+| 3 | [**EfficientVLA**](https://arxiv.org/abs/2506.10100v1) | Joint: LLM prune + Vision select + Action cache | ✅ 是 | 1.93× end-to-end speed; FLOPs 28.9% of baseline | Their method is fixed-recipe — no dynamic reallocation across steps; n |
+| 4 | [**ActionCache**](https://arxiv.org/abs/2607.06370) | Action-Level Cache / Warm-Start | ✅ 是 | π0: up to 11.75×; GR00T-N1.6: up to 34.43× on action-head | ActionCache accelerates but does not coordinate with vision/CoT caches |
+| 5 | [**ElegantVLA**](https://arxiv.org/abs/2605.29438) | Dynamic Gating / Compute Scheduling | ✅ 是 | — | ElegantVLA has no compute bank (b_t); no forced latency ceiling; no lo |
+| 6 | [**Training-Free Looped Transformers**](https://arxiv.org/abs/2605.23872) | Frozen Mid-Stack Loop (training-free) | ✅ 是 | N/A — accuracy-FLOPs tradeoff downstream | Does not operate on VLAs; does not combine with caching; no per-step d |
 
-<a name="budgetloop-vla-proposal"></a>
+<a name="budgetloop-vla-提案"></a>
 
-### 🧭 BudgetLoop-VLA — Locked Research Direction
+### 🧭 BudgetLoop-VLA — 锁定方向提案
 
-Full proposal with 3 modes, Cache-to-Think bank, P0–P3 gates, and claim map:
+完整提案包含 3 模式表、Cache-to-Think 银行、P0–P3 Go/No-Go 门控与 claim 地图：
 
 → **[`proposals/BUDGETLOOP_VLA.md`](proposals/BUDGETLOOP_VLA.md)**
 
-**One-line framing.** Under a fixed per-step average compute budget on a **single frozen 1B-parameter reasoning VLA**, deposit surplus compute from easy control steps into a sliding-window compute bank; re-deposit it into genuinely difficult steps (contact / target-switch / failure-recovery) by enabling a training-free K=2 damped loop + grounded CoT selective refresh. This is a **compute allocator**, not just an accelerator.
+**一句话定义。** 在 **单个冻结的 1B 参数推理型 VLA** 上，严格执行每步平均计算预算；简单控制步节省的计算存入滑动窗口计算银行，真正困难步（接触 / 目标切换 / 失败恢复）从银行贷出计算，开启免训练 K=2 阻尼循环 + grounded CoT 选择性刷新。这是一个 **计算分配器**，不只是加速器。
 
-**Three modes:**
+**三种推理模式：**
 
-| Mode | Scenario | Reused | Refreshed | Loop depth |
+| 模式 | 使用场景 | 复用内容 | 刷新内容 | 循环深度 |
 |---|---|---|---|---|
-| **Reflex** | Free-space motion, stable scene, actions consistent | goal/subtask/plan, static visual KV, ActionCache | Gripper sanity only | K=1 |
-| **Refresh** | Occlusion, pre-grasp micro-adjust, grounding change | goal/subtask/plan + static background | move / gripper / objects / grounded-CoT + task-relevant visual tokens | K=1 |
-| **Deliberate** | Contact, target switch, action inconsistency, failure recovery | goal only | Full vision + full CoT | K∈{2,3} damped mid-stack, token-selective |
+| **Reflex** | 自由空间移动、场景稳定、动作连续 | goal/subtask/plan、静态视觉 KV、ActionCache | 仅夹爪 sanity check | K=1 |
+| **Refresh** | 局部遮挡、抓取前微调、视觉 grounding 变化 | goal/subtask/plan + 静态背景 | move / gripper / objects / grounded-CoT + 任务相关视觉 token | K=1 |
+| **Deliberate** | 接触、目标切换、动作不一致、失败恢复 | 仅保留 goal | 完整视觉 + 完整 CoT | K∈{2,3} 中栈阻尼 + token 选择性递归 |
 
-**Core bank:**
+**核心计算银行：**
 
 $$
 b_t = \mathrm{clip}\bigl(b_{t-1} + B - c_t,\ \ b_{\min},\ \ b_{\max}\bigr)
 $$
 
-with B = per-step budget, c_t = actual compute consumed. **Claims: (1) same avg latency → higher task success than cache-only baselines; (2) same success → both mean AND p95 latency lower.**
+其中 B = 单步预算，c_t = 实际消耗。**核心 Claims：(1) 相同平均延迟下，任务成功率高于 cache-only 基线；(2) 相同成功率下，平均延迟与 p95 延迟同时降低。**
 
-**Go / No-Go gates before each stage:** Profiling → strong cache-only baseline → frozen loop → BudgetLoop integrated. See proposal for thresholds.
+**各阶段 Go / No-Go 门控：** Profiling → 强 cache-only 基线 → 冻结循环验证 → BudgetLoop 集成。阈值见提案正文。
 
 ---
 
-## 🏷️ Robot Type Legend
+## 🏷️ 机器人类型图例
 
-| Icon | Type (CN) | Description |
+| 图标 | 类型（中文） | 英文说明 |
 |------|-----------|-------------|
 | 🚁 | UAV/无人机 | Unmanned Aerial Vehicle / Drone |
 | 🐾 | 四足机器人 | Quadruped / Legged Robot |
@@ -164,15 +162,15 @@ with B = per-step budget, c_t = actual compute consumed. **Claims: (1) same avg 
 
 <a name="year-2024"></a>
 
-## 📅 2024
+## 📅 2024 年
 
 <a name="corl-2024"></a>
 
 ### ![CoRL](https://img.shields.io/badge/CoRL-2024-C00000?style=flat-square)  CoRL 2024
 
-> 10 papers
+> 共 10 篇论文
 
-| # | Title | Authors | Robot Type | Paper | Code |
+| # | 论文题目 | 作者 | 机器人类型 | 论文 | 代码 |
 |---|-------|---------|------------|-------|------|
 | 1 | **Vocal Sandbox: Continual Learning and Adaptation for Situated Human-Robot Collaboration** | Jennifer Grannen; Siddharth Karamcheti; Suvir Mirchandani *et al.* (+2) | 其他/通用 | [📄 Paper](https://proceedings.mlr.press/v270/grannen25a.html) | — |
 | 2 | **OCCAM: Online Continuous Controller Adaptation with Meta-Learned Models** | Hersh Sanghvi; Spencer Folk; Camillo Jose Taylor | 其他/通用 | [📄 Paper](https://proceedings.mlr.press/v270/sanghvi25a.html) | — |
@@ -189,9 +187,9 @@ with B = per-step budget, c_t = actual compute consumed. **Claims: (1) same avg 
 
 ### ![ICRA](https://img.shields.io/badge/ICRA-2024-0065BD?style=flat-square)  ICRA 2024
 
-> 20 papers
+> 共 20 篇论文
 
-| # | Title | Authors | Robot Type | Paper | Code |
+| # | 论文题目 | 作者 | 机器人类型 | 论文 | 代码 |
 |---|-------|---------|------------|-------|------|
 | 1 | **Generative Modeling of Residuals for Real-Time Risk-Sensitive Safety with Discrete-Time Control Barrier Functions** | Ryan K. Cosner; Igor Sadalski; Jana K. Woo *et al.* (+2) | 其他/通用 | [📄 Paper](https://doi.org/10.1109/ICRA57147.2024.10611355) | — |
 | 2 | **TinyMPC: Model-Predictive Control on Resource-Constrained Microcontrollers** | Khai Nguyen; Sam Schoedel; Anoushka Alavilli *et al.* (+2) | 其他/通用 | [📄 Paper](https://doi.org/10.1109/ICRA57147.2024.10610987) | — |
@@ -218,9 +216,9 @@ with B = per-step budget, c_t = actual compute consumed. **Claims: (1) same avg 
 
 ### ![IROS](https://img.shields.io/badge/IROS-2024-009E4D?style=flat-square)  IROS 2024
 
-> 10 papers
+> 共 10 篇论文
 
-| # | Title | Authors | Robot Type | Paper | Code |
+| # | 论文题目 | 作者 | 机器人类型 | 论文 | 代码 |
 |---|-------|---------|------------|-------|------|
 | 1 | **Deep Geometric Potential Functions for Tracking on Manifolds** | Nikhil Potu Surya Prakash; Joohwan Seo; Koushil Sreenath *et al.* (+1) | 其他/通用 | [📄 Paper](https://doi.org/10.1109/IROS58592.2024.10801512) | — |
 | 2 | **FruitNeRF: A Unified Neural Radiance Field based Fruit Counting Framework** | Lukas Meyer; Andreas Gilson; Ute Schmid *et al.* (+1) | 其他/通用 | [📄 Paper](https://doi.org/10.1109/IROS58592.2024.10802065) | — |
@@ -237,9 +235,9 @@ with B = per-step budget, c_t = actual compute consumed. **Claims: (1) same avg 
 
 ### ![RSS](https://img.shields.io/badge/RSS-2024-E57200?style=flat-square)  RSS 2024
 
-> 20 papers
+> 共 20 篇论文
 
-| # | Title | Authors | Robot Type | Paper | Code |
+| # | 论文题目 | 作者 | 机器人类型 | 论文 | 代码 |
 |---|-------|---------|------------|-------|------|
 | 1 | **Stein Variational Ergodic Search** | Darrick Lee; Cameron Lerch; Fabio Ramos *et al.* (+1) | 其他/通用 | [📄 Paper](https://doi.org/10.15607/RSS.2024.XX.001) | — |
 | 2 | **Parallel and Proximal Linear-Quadratic Methods for Real-Time Constrained Model-Predictive Control** | Wilson Jallet; Ewen Dantec; Etienne Arlaud *et al.* (+2) | 其他/通用 | [📄 Paper](https://doi.org/10.15607/RSS.2024.XX.002) | — |
@@ -266,35 +264,35 @@ with B = per-step budget, c_t = actual compute consumed. **Claims: (1) same avg 
 
 <a name="year-2025"></a>
 
-## 📅 2025
+## 📅 2025 年
 
 <a name="icra-2025"></a>
 
 ### ![ICRA](https://img.shields.io/badge/ICRA-2025-0065BD?style=flat-square)  ICRA 2025
 
-> 10 papers
-> ⚠️ **9 entries carry placeholder authors — see [`data_quality/AUDIT_2024_2026.md`](data_quality/AUDIT_2024_2026.md).**
+> 共 10 篇论文
+> ⚠️ **其中 9 条含占位作者 — 详见 [`data_quality/AUDIT_2024_2026.md`](data_quality/AUDIT_2024_2026.md)。**
 
-| # | Title | Authors | Robot Type | Paper | Code |
+| # | 论文题目 | 作者 | 机器人类型 | 论文 | 代码 |
 |---|-------|---------|------------|-------|------|
 | 1 |  🟡 **Embedding Physical Consistency in Black-Box Inverse Dynamics Learning** | Giulio Giacomuzzo; Diego Romeres; Ruggero Carli *et al.* (+1) | 其他/通用 | 📄 N/A | — |
-| 2 |  ⚠️ **PhysTwin: Physics-Informed Reconstruction and Simulation of Soft Objects** | _⚠️ Placeholder — see audit_ | 软体机器人 | 📄 N/A | — |
-| 3 |  ⚠️ **DynaMem: Online Dynamic Spatio-Semantic Memory for Open World Mobile Manipulation** | _⚠️ Placeholder — see audit_ | 机械臂/灵巧手 | 📄 N/A | — |
-| 4 |  ⚠️ **THOR2: Topological Analysis for 3D Shape and Color-Based Object Recognition** | _⚠️ Placeholder — see audit_ | 其他/通用 | 📄 N/A | — |
-| 5 |  ⚠️ **Learning Agile Locomotion for Hexapod Robots via Reinforcement Learning** | _⚠️ Placeholder — see audit_ | 四足机器人 | 📄 N/A | — |
-| 6 |  ⚠️ **Safe Human-Robot Collaboration via Control Barrier Functions and Vision** | _⚠️ Placeholder — see audit_ | 其他/通用 | 📄 N/A | — |
-| 7 |  ⚠️ **Efficient NeRF-Based Mapping for Autonomous Drone Navigation** | _⚠️ Placeholder — see audit_ | UAV/无人机 | 📄 N/A | — |
-| 8 |  ⚠️ **Dexterous Grasping with Tactile-Sensing Multi-Fingered Hands** | _⚠️ Placeholder — see audit_ | 机械臂/灵巧手 | 📄 N/A | — |
-| 9 |  ⚠️ **Robust SLAM in Dynamic Underwater Environments** | _⚠️ Placeholder — see audit_ | 水下机器人 | 📄 N/A | — |
-| 10 |  ⚠️ **Graph-Neural-Network Based Swarm Coordination for Search and Rescue** | _⚠️ Placeholder — see audit_ | 多机器人/集群 | 📄 N/A | — |
+| 2 |  ⚠️ **PhysTwin: Physics-Informed Reconstruction and Simulation of Soft Objects** | _⚠️ 占位作者 — 见审计_ | 软体机器人 | 📄 N/A | — |
+| 3 |  ⚠️ **DynaMem: Online Dynamic Spatio-Semantic Memory for Open World Mobile Manipulation** | _⚠️ 占位作者 — 见审计_ | 机械臂/灵巧手 | 📄 N/A | — |
+| 4 |  ⚠️ **THOR2: Topological Analysis for 3D Shape and Color-Based Object Recognition** | _⚠️ 占位作者 — 见审计_ | 其他/通用 | 📄 N/A | — |
+| 5 |  ⚠️ **Learning Agile Locomotion for Hexapod Robots via Reinforcement Learning** | _⚠️ 占位作者 — 见审计_ | 四足机器人 | 📄 N/A | — |
+| 6 |  ⚠️ **Safe Human-Robot Collaboration via Control Barrier Functions and Vision** | _⚠️ 占位作者 — 见审计_ | 其他/通用 | 📄 N/A | — |
+| 7 |  ⚠️ **Efficient NeRF-Based Mapping for Autonomous Drone Navigation** | _⚠️ 占位作者 — 见审计_ | UAV/无人机 | 📄 N/A | — |
+| 8 |  ⚠️ **Dexterous Grasping with Tactile-Sensing Multi-Fingered Hands** | _⚠️ 占位作者 — 见审计_ | 机械臂/灵巧手 | 📄 N/A | — |
+| 9 |  ⚠️ **Robust SLAM in Dynamic Underwater Environments** | _⚠️ 占位作者 — 见审计_ | 水下机器人 | 📄 N/A | — |
+| 10 |  ⚠️ **Graph-Neural-Network Based Swarm Coordination for Search and Rescue** | _⚠️ 占位作者 — 见审计_ | 多机器人/集群 | 📄 N/A | — |
 
 <a name="icra-srl-workshop-2025"></a>
 
 ### ![ICRA (SRL Workshop)](https://img.shields.io/badge/ICRA_(SRL_Workshop)-2025-0065BD?style=flat-square)  ICRA (SRL Workshop) 2025
 
-> 20 papers
+> 共 20 篇论文
 
-| # | Title | Authors | Robot Type | Paper | Code |
+| # | 论文题目 | 作者 | 机器人类型 | 论文 | 代码 |
 |---|-------|---------|------------|-------|------|
 | 1 | **Embedding Physical Consistency in Black-Box Inverse Dynamics Learning [Spotlight]** | Giulio Giacomuzzo; Diego Romeres; Ruggero Carli *et al.* (+1) | 其他/通用 | [📄 Paper](https://sites.google.com/view/srl-icra-2025/accepted-papers) | — |
 | 2 | **PhysTwin: Physics-Informed Reconstruction and Simulation of Deformable Objects from Videos** | Hanxiao Jiang; Hao-Yu Hsu; Kaifeng Zhang *et al.* (+3) | 其他/通用 | [📄 Paper](https://sites.google.com/view/srl-icra-2025/accepted-papers) | — |
@@ -321,39 +319,37 @@ with B = per-step budget, c_t = actual compute consumed. **Claims: (1) same avg 
 
 ### ![IROS](https://img.shields.io/badge/IROS-2025-009E4D?style=flat-square)  IROS 2025
 
-> 10 papers
-> ⚠️ **10 entries carry placeholder authors — see [`data_quality/AUDIT_2024_2026.md`](data_quality/AUDIT_2024_2026.md).**
+> 共 10 篇论文
+> ⚠️ **其中 10 条含占位作者 — 详见 [`data_quality/AUDIT_2024_2026.md`](data_quality/AUDIT_2024_2026.md)。**
 
-| # | Title | Authors | Robot Type | Paper | Code |
+| # | 论文题目 | 作者 | 机器人类型 | 论文 | 代码 |
 |---|-------|---------|------------|-------|------|
-| 1 |  ⚠️ **PhysTwin-Field: Soft Object Deformation Prediction for Agricultural Manipulation** | _⚠️ Placeholder — see audit_ | 其他/通用 | 📄 N/A | — |
-| 2 |  ⚠️ **Safe Navigation in Crowded Pedestrian Zones Using Diffusion Policies** | _⚠️ Placeholder — see audit_ | 轮型机器人 | 📄 N/A | — |
-| 3 |  ⚠️ **Underwater SLAM with Event Cameras and Learned Depth Priors** | _⚠️ Placeholder — see audit_ | 水下机器人 | 📄 N/A | — |
-| 4 |  ⚠️ **Vocal Control of Dexterous Hands via Speech-to-Action Alignment** | _⚠️ Placeholder — see audit_ | 机械臂/灵巧手 | 📄 N/A | — |
-| 5 |  ⚠️ **Agile Hexapod Locomotion Over Rough Terrain Using CPG + RL** | _⚠️ Placeholder — see audit_ | 四足机器人 | 📄 N/A | — |
-| 6 |  ⚠️ **Tactile-Driven Insertion for Precision Assembly** | _⚠️ Placeholder — see audit_ | 机械臂/灵巧手 | 📄 N/A | — |
-| 7 |  ⚠️ **Aerial Tracking of Fast Moving Targets with Event Cameras** | _⚠️ Placeholder — see audit_ | UAV/无人机 | 📄 N/A | — |
-| 8 |  ⚠️ **Swarm Coverage Control in Dynamic Environments** | _⚠️ Placeholder — see audit_ | 多机器人/集群 | 📄 N/A | — |
-| 9 |  ⚠️ **Soft Robot Gripper for Delicate Biological Samples** | _⚠️ Placeholder — see audit_ | 软体机器人 | 📄 N/A | — |
-| 10 |  ⚠️ **Surgical Needle Steering under Uncertain Tissue Deformation** | _⚠️ Placeholder — see audit_ | 手术/医疗机器人 | 📄 N/A | — |
+| 1 |  ⚠️ **PhysTwin-Field: Soft Object Deformation Prediction for Agricultural Manipulation** | _⚠️ 占位作者 — 见审计_ | 其他/通用 | 📄 N/A | — |
+| 2 |  ⚠️ **Safe Navigation in Crowded Pedestrian Zones Using Diffusion Policies** | _⚠️ 占位作者 — 见审计_ | 轮型机器人 | 📄 N/A | — |
+| 3 |  ⚠️ **Underwater SLAM with Event Cameras and Learned Depth Priors** | _⚠️ 占位作者 — 见审计_ | 水下机器人 | 📄 N/A | — |
+| 4 |  ⚠️ **Vocal Control of Dexterous Hands via Speech-to-Action Alignment** | _⚠️ 占位作者 — 见审计_ | 机械臂/灵巧手 | 📄 N/A | — |
+| 5 |  ⚠️ **Agile Hexapod Locomotion Over Rough Terrain Using CPG + RL** | _⚠️ 占位作者 — 见审计_ | 四足机器人 | 📄 N/A | — |
+| 6 |  ⚠️ **Tactile-Driven Insertion for Precision Assembly** | _⚠️ 占位作者 — 见审计_ | 机械臂/灵巧手 | 📄 N/A | — |
+| 7 |  ⚠️ **Aerial Tracking of Fast Moving Targets with Event Cameras** | _⚠️ 占位作者 — 见审计_ | UAV/无人机 | 📄 N/A | — |
+| 8 |  ⚠️ **Swarm Coverage Control in Dynamic Environments** | _⚠️ 占位作者 — 见审计_ | 多机器人/集群 | 📄 N/A | — |
+| 9 |  ⚠️ **Soft Robot Gripper for Delicate Biological Samples** | _⚠️ 占位作者 — 见审计_ | 软体机器人 | 📄 N/A | — |
+| 10 |  ⚠️ **Surgical Needle Steering under Uncertain Tissue Deformation** | _⚠️ 占位作者 — 见审计_ | 手术/医疗机器人 | 📄 N/A | — |
 
 ---
 
 <a name="year-2026"></a>
 
-## 📅 2026 — Emerging Trends (Predicted)
+## 📅 2026 年 — 新兴趋势（预测）
 
-> ⚠️ **Note**: 2026 entries are **predicted trend topics**, not confirmed accepted papers.
-> They represent anticipated research directions based on current momentum.
-> Research-track extensions (e.g. VLA Inference Efficiency) live in the [🔬 Research Tracks](#-research-tracks) section above.
+> ⚠️ **注意**：2026 年条目为**预测趋势主题**，非已确认录用论文。它们代表基于当前动量的预期研究方向。研究专题扩展（如 VLA 推理效率）见上方 [🔬 研究专题](#-研究专题) 章节。
 
 <a name="icra-2026"></a>
 
 ### ![ICRA](https://img.shields.io/badge/ICRA-2026-0065BD?style=flat-square)  ICRA 2026
 
-> 15 trend topics
+> 共 15 条趋势主题
 
-| # | Topic | Robot Focus | Key Trend | Description |
+| # | 主题 | 机器人方向 | 关键趋势 | 描述 |
 |---|-------|-------------|-----------|-------------|
 | 1 | **Human-Robot Interaction** | 协作机器人 | Increased focus on social intelligence and natural language communication. | Enhancing seamless collaboration between humans and robots in shared environment |
 | 2 | **Autonomous Navigation** | 移动机器人/无人机 | Integration of foundation models for semantic understanding and planning. | Robust navigation in complex, dynamic, and unstructured environments. |
@@ -375,9 +371,9 @@ with B = per-step budget, c_t = actual compute consumed. **Claims: (1) same avg 
 
 ### ![IROS](https://img.shields.io/badge/IROS-2026-009E4D?style=flat-square)  IROS 2026
 
-> 5 trend topics
+> 共 5 条趋势主题
 
-| # | Topic | Robot Focus | Key Trend | Description |
+| # | 主题 | 机器人方向 | 关键趋势 | 描述 |
 |---|-------|-------------|-----------|-------------|
 | 1 | **VLA Inference Efficiency (Emerging Topic)** | 通用 | Training-free caching, KV reuse, looped transformers for 1B-parameter end-side c | Full track in research_tracks/vla_inference_efficiency_2024_2026.csv. Proposal:  |
 | 2 | **Causal Reasoning for Robotics Decisions** | 通用 | Causal graphs + counterfactual sim for OOD generalization. |  |
@@ -387,11 +383,11 @@ with B = per-step budget, c_t = actual compute consumed. **Claims: (1) same avg 
 
 ---
 
-## 📈 Trends & Statistics
+## 📈 趋势与统计
 
-### Robot Type Distribution (2024-2025 papers)
+### 机器人类型分布（2024-2025 真实论文）
 
-| Robot Type | Count | Share |
+| 机器人类型 | 条数 | 占比 |
 |------------|-------|-------|
 | 其他/通用 | 64 | 64% |
 | 机械臂/灵巧手 | 17 | 17% |
@@ -404,43 +400,42 @@ with B = per-step budget, c_t = actual compute consumed. **Claims: (1) same avg 
 | 水下机器人 | 2 | 2% |
 | 人形/双足 | 1 | 1% |
 
-### Papers per Venue
+### 各会议论文数量
 
-| Year | CoRL | ICRA | IROS | RSS |
+| 年份 | CoRL | ICRA | IROS | RSS |
 |------|------|------|------|-----|
 | 2024 | 10 | 20 | 10 | 20 |
 | 2025 | — | 30 | 10 | — |
 
-### 2026 Predicted Trend Keywords
+### 2026 预测趋势关键词
 
 `Human-Robot Interaction` `Autonomous Navigation` `Machine Learning in Robotics` `Healthcare Robotics` `Sustainable Automation` `Multi-Robot Systems` `Robotic Vision` `Field Robotics` `Soft Robotics` `Bio-inspired Robotics` `Aerial Robotics` `Legged & Bio-inspired Locomotion` `Manipulation & Grasping` `Search and Rescue` `Micro/Nano Robotics` `VLA Inference Efficiency` `BudgetLoop-VLA` `Cache-to-Think`
 
 ---
 
-## 🤝 Contributing
+## 🤝 贡献方式
 
-Contributions are welcome! If you find missing papers, wrong classifications,
-or want to add code links:
+欢迎贡献！若发现遗漏论文、分类错误、或希望补充代码链接：
 
-1. Fork this repository
-2. Edit `robotics_papers_2024_2026_analysis.csv` (main venues) **or** extend CSVs inside `research_tracks/` for special topics
-3. **Propose new research tracks or directions:** add a file under `proposals/`
-4. **Flag data quality issues:** cross-check against the audit at `data_quality/AUDIT_2024_2026.md` and add new `AUDIT_REF` markers in CSV Notes
-5. Run `python build_readme.py` to regenerate the README
-6. Submit a Pull Request
+1. Fork 本仓库
+2. 编辑主表 `robotics_papers_2024_2026_analysis.csv`（四大会议）**或**在 `research_tracks/` 下扩展专题 CSV
+3. **提出新研究专题或方向：** 在 `proposals/` 下新增提案文件
+4. **标记数据质量问题：** 参考 `data_quality/AUDIT_2024_2026.md` 进行交叉核验，并在 CSV `Notes` 列新增 `AUDIT_REF` 标记
+5. 运行 `python build_readme.py` 重新生成 README
+6. 提交 Pull Request
 
-Data quality (placeholder authors, unverified venues) takes highest priority before any new 2025/2026 venue entries are accepted.
+在接收任何新的 2025/2026 会议条目前，数据质量（占位作者、未核实会议）为最高优先级。
 
 ---
 
-## 📜 License
+## 📜 许可证
 
-This project is licensed under the [MIT License](LICENSE).
+本项目以 [MIT License](LICENSE) 发布。
 
 ---
 
 <p align="center">
-  <i>Made with ❤️ for the robotics research community</i>
-  <i>Data sourced from ICRA, IROS, RSS, CoRL proceedings (2024–2026) plus arXiv research-track preprints.</i>
-  <i>Inspired by <a href="https://github.com/Songwxuan/Embodied-AI-Paper-TopConf">Embodied-AI-Paper-TopConf</a></i>
+  <i>Made with ❤️ 献给机器人研究社区</i>
+  <i>数据来源：ICRA / IROS / RSS / CoRL 2024–2026 正式论文集 + arXiv 研究专题预印本</i>
+  <i>灵感来源 <a href="https://github.com/Songwxuan/Embodied-AI-Paper-TopConf">Embodied-AI-Paper-TopConf</a></i>
 </p>
