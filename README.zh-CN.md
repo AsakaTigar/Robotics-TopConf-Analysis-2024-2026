@@ -395,10 +395,10 @@ $$
 欢迎贡献！若发现遗漏论文、分类错误、或希望补充代码链接，请按以下流程：
 
 1. Fork 本仓库
-2. 编辑主表 `robotics_papers_2024_2026_analysis.csv`（四大会议）**或**在 `research_tracks/` 下扩展专题 CSV
+2. 编辑主表 `datasets/robotics_papers_2024_2026_analysis.csv`（四大会议）**或**在 `research_tracks/` 下扩展专题 CSV
 3. **提出新研究专题 / 方向：** 在 `proposals/` 目录下新增 Markdown 提案
 4. **交叉核验新条目：** 对照会议官网或 arXiv 摘要核对元数据，确保标题、作者列表、会议与已收录条目保持一致
-5. 运行 `python build_readme.py` 重新生成双语文档
+5. 在仓库根目录执行 `python scripts/build_readme.py` 重新生成双语文档
 6. 提交 Pull Request
 
 ---

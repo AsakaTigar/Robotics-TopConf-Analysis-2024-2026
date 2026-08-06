@@ -397,10 +397,10 @@ where B = per-step compute budget, c_t = actual compute consumed. **Core claims:
 Contributions are welcome! If you find missing papers, wrong classifications, or would like to add code links:
 
 1. Fork this repository
-2. Edit `robotics_papers_2024_2026_analysis.csv` (main four venues) **or** extend a CSV under `research_tracks/` for special topics
+2. Edit `datasets/robotics_papers_2024_2026_analysis.csv` (main four venues) **or** extend a CSV under `research_tracks/` for special topics
 3. **Propose new research tracks or directions:** add a Markdown file under `proposals/`
 4. **Cross-check new entries:** verify paper metadata against the official venue page or arXiv abstract and keep titles / author lists / venues consistent with the already-indexed rows
-5. Run `python build_readme.py` to regenerate both READMEs
+5. Run `python scripts/build_readme.py` from the repository root to regenerate both READMEs
 6. Open a Pull Request
 
 ---

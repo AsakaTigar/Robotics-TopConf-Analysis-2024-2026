@@ -1,17 +1,26 @@
 """Generate bilingual README from the main CSV + research tracks.
 
-Outputs:
+Usage:
+  # from repo root (recommended)
+  python scripts/build_readme.py
+
+Outputs (always written to repository root):
   - README.md         (English, default GitHub landing)
   - README.zh-CN.md   (Simplified Chinese mirror)
 
 Both files carry a top-of-page language-switcher badge that points at
 the other file, matching standard bilingual GitHub repository UX.
 """
-import csv, os
+import csv, os, sys
 from collections import defaultdict, Counter
 
-BASE    = os.path.dirname(os.path.abspath(__file__))
-CSV_MAIN = os.path.join(BASE, "robotics_papers_2024_2026_analysis.csv")
+# When invoked as scripts/build_readme.py, BASE should be the repo root
+# (one level up from this file), so data paths and output paths stay stable
+# regardless of cwd.
+_HERE     = os.path.dirname(os.path.abspath(__file__))
+BASE      = os.path.dirname(_HERE) if os.path.basename(_HERE) == "scripts" else _HERE
+
+CSV_MAIN = os.path.join(BASE, "datasets", "robotics_papers_2024_2026_analysis.csv")
 CSV_VLA  = os.path.join(BASE, "research_tracks", "vla_inference_efficiency_2024_2026.csv")
 OUT_EN   = os.path.join(BASE, "README.md")
 OUT_ZH   = os.path.join(BASE, "README.zh-CN.md")
@@ -143,10 +152,10 @@ the structural template for this repository. Many thanks! 🎉""",
         "contrib_title":   "## 🤝 Contributing",
         "contrib_intro": "Contributions are welcome! If you find missing papers, wrong classifications, or would like to add code links:",
         "contrib_step_1": "Fork this repository",
-        "contrib_step_2": "Edit `robotics_papers_2024_2026_analysis.csv` (main four venues) **or** extend a CSV under `research_tracks/` for special topics",
+        "contrib_step_2": "Edit `datasets/robotics_papers_2024_2026_analysis.csv` (main four venues) **or** extend a CSV under `research_tracks/` for special topics",
         "contrib_step_3": "**Propose new research tracks or directions:** add a Markdown file under `proposals/`",
         "contrib_step_4": "**Cross-check new entries:** verify paper metadata against the official venue page or arXiv abstract and keep titles / author lists / venues consistent with the already-indexed rows",
-        "contrib_step_5": "Run `python build_readme.py` to regenerate both READMEs",
+        "contrib_step_5": "Run `python scripts/build_readme.py` from the repository root to regenerate both READMEs",
         "contrib_step_6": "Open a Pull Request",
         "contrib_dq_note": "Data quality (placeholder authors, unverified venues) is the highest priority before any new 2025/2026 venue entries are accepted.",
         "license_title": "## 📜 License",
@@ -279,10 +288,10 @@ the structural template for this repository. Many thanks! 🎉""",
         "contrib_title":   "## 🤝 如何贡献",
         "contrib_intro": "欢迎贡献！若发现遗漏论文、分类错误、或希望补充代码链接，请按以下流程：",
         "contrib_step_1": "Fork 本仓库",
-        "contrib_step_2": "编辑主表 `robotics_papers_2024_2026_analysis.csv`（四大会议）**或**在 `research_tracks/` 下扩展专题 CSV",
+        "contrib_step_2": "编辑主表 `datasets/robotics_papers_2024_2026_analysis.csv`（四大会议）**或**在 `research_tracks/` 下扩展专题 CSV",
         "contrib_step_3": "**提出新研究专题 / 方向：** 在 `proposals/` 目录下新增 Markdown 提案",
         "contrib_step_4": "**交叉核验新条目：** 对照会议官网或 arXiv 摘要核对元数据，确保标题、作者列表、会议与已收录条目保持一致",
-        "contrib_step_5": "运行 `python build_readme.py` 重新生成双语文档",
+        "contrib_step_5": "在仓库根目录执行 `python scripts/build_readme.py` 重新生成双语文档",
         "contrib_step_6": "提交 Pull Request",
         "contrib_dq_note": "在接收任何新的 2025 / 2026 会议条目前，数据质量（占位作者、未核实会议）为最高优先级。",
         "license_title": "## 📜 许可证",
