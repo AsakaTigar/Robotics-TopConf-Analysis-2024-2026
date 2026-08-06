@@ -82,7 +82,7 @@ Curated **17 papers** spanning 6 method categories. Source file:
 
 | # | Work | Category | Training-Free? | Reported speedup | Gap BudgetLoop fills |
 |---|---|---|---|---|---|
-| 1 | [**Fast ECoT**](https://arxiv.org/abs/2506.07639) | CoT Plan Reuse + Modular Parallel | ✅ YES | ~1.5x–3x end-to-end | Saves compute but discards it — BudgetLoop banks + reallocates; no grounded vs semantic TTL tiering |
+| 1 | [**Fast ECoT**](https://arxiv.org/abs/2506.07639) | CoT Plan Reuse + Modular Parallel | ✅ YES | Up to ~7.5% end-to-end latency reduction (author-reported, abstract §1) on LIBERO + OpenVLA-ECoT baseline. | Saves compute but discards it — BudgetLoop banks + reallocates; no grounded vs semantic TTL tiering |
 | 2 | [**VLA-Cache**](https://arxiv.org/abs/2502.02175) | Visual Token / KV Reuse | ✅ YES | — but significant vision-layer FLOPs reduction | Saves vision FLOPs but has no cross-step budget, no compute bank, no loop |
 | 3 | [**EfficientVLA**](https://arxiv.org/abs/2506.10100v1) | Joint: LLM prune + Vision select + Action cache | ✅ YES | 1.93× end-to-end speed; FLOPs 28.9% of baseline | Fixed pruning/select/cache recipe — no difficulty-driven dynamic reallocation across steps |
 | 4 | [**ActionCache**](https://arxiv.org/abs/2607.06370) | Action-Level Cache / Warm-Start | ✅ YES | π0: up to 11.75×; GR00T-N1.6: up to 34.43× on action-head | Action-head only — no joint vision + CoT coordination; no unified budget controller |

@@ -80,7 +80,7 @@
 
 | # | 工作 | 类别 | 免训练? | 报告加速比 | BudgetLoop 填补的缺口 |
 |---|---|---|---|---|---|
-| 1 | [**Fast ECoT**](https://arxiv.org/abs/2506.07639) | CoT Plan Reuse + Modular Parallel | ✅ 是 | ~1.5x–3x end-to-end | 省了计算就扔掉 — BudgetLoop 存进银行再分配；也无语义/grounded 两层 TTL |
+| 1 | [**Fast ECoT**](https://arxiv.org/abs/2506.07639) | CoT Plan Reuse + Modular Parallel | ✅ 是 | Up to ~7.5% end-to-end latency reduction (author-reported, abstract §1) on LIBERO + OpenVLA-ECoT baseline. | 省了计算就扔掉 — BudgetLoop 存进银行再分配；也无语义/grounded 两层 TTL |
 | 2 | [**VLA-Cache**](https://arxiv.org/abs/2502.02175) | Visual Token / KV Reuse | ✅ 是 | — but significant vision-layer FLOPs reduction | 省了视觉 FLOPs，但无跨步预算、无计算银行、无循环 |
 | 3 | [**EfficientVLA**](https://arxiv.org/abs/2506.10100v1) | Joint: LLM prune + Vision select + Action cache | ✅ 是 | 1.93× end-to-end speed; FLOPs 28.9% of baseline | 固定剪枝/选 token / 缓存配方；没有按难度跨步动态再分配 |
 | 4 | [**ActionCache**](https://arxiv.org/abs/2607.06370) | Action-Level Cache / Warm-Start | ✅ 是 | π0: up to 11.75×; GR00T-N1.6: up to 34.43× on action-head | 只管动作头；视觉+CoT 不联动；无统一预算控制器 |

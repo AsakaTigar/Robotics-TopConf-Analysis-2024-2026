@@ -1,4 +1,4 @@
-"Year","Venue","Title","Authors","Affiliation","Paper Link","Robot Type","Code Link","Notes"
+﻿"Year","Venue","Title","Authors","Affiliation","Paper Link","Robot Type","Code Link","Notes"
 "2024","CoRL","Vocal Sandbox: Continual Learning and Adaptation for Situated Human-Robot Collaboration","Jennifer Grannen; Siddharth Karamcheti; Suvir Mirchandani; Percy Liang; Dorsa Sadigh","Stanford University","https://proceedings.mlr.press/v270/grannen25a.html","其他/通用","NA",""
 "2024","CoRL","OCCAM: Online Continuous Controller Adaptation with Meta-Learned Models","Hersh Sanghvi; Spencer Folk; Camillo Jose Taylor","University of Pennsylvania","https://proceedings.mlr.press/v270/sanghvi25a.html","其他/通用","NA",""
 "2024","CoRL","Equivariant Diffusion Policy","Dian Wang; Stephen Hart; David Surovik; Tarik Kelestemur; Haojie Huang; Haibo Zhao; Mark Yeatman; Jiuguang Wang; Robin Walters; Robert Platt","Northeastern University","https://proceedings.mlr.press/v270/wang25a.html","其他/通用","NA",""
