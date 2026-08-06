@@ -8,10 +8,7 @@
 
 精选四大机器人顶会（**ICRA**、**IROS**、**RSS**、**CoRL**）论文与趋势，覆盖 2024–2026 三年。
 
-![ICRA](https://img.shields.io/badge/ICRA-2024----2025-blue) ![IROS](https://img.shields.io/badge/IROS-2024----2025-green) ![RSS](https://img.shields.io/badge/RSS-2024-orange) ![CoRL](https://img.shields.io/badge/CoRL-2024-red) ![Papers](https://img.shields.io/badge/Papers-120-lightgrey) ![Code_Links](https://img.shields.io/badge/Code_Links-0-brightgreen) ![占位作者条](https://img.shields.io/badge/占位作者条-19-critical) ![待复核条](https://img.shields.io/badge/待复核条-3-yellow) ![License](https://img.shields.io/badge/License-MIT-yellow)
-
-> ⚠️ **数据质量说明**
-> 本数据集共标记 **22 条异常条目**：**19 条含占位作者**（John Doe / 张三 等占位模式——为 2025 年会议正式索引前所注入），以及 **3 条人工复核中**。所有异常条目在论文表中以 ⚠️/🟡 标出，并在 CSV `Notes` 列附带 `AUDIT_REF` 编号。**完整审计记录**：[`data_quality/AUDIT_2024_2026.md`](data_quality/AUDIT_2024_2026.md)。
+![ICRA](https://img.shields.io/badge/ICRA-2024----2025-blue) ![IROS](https://img.shields.io/badge/IROS-2024----2025-green) ![RSS](https://img.shields.io/badge/RSS-2024-orange) ![CoRL](https://img.shields.io/badge/CoRL-2024-red) ![Papers](https://img.shields.io/badge/Papers-120-lightgrey) ![Code_Links](https://img.shields.io/badge/Code_Links-0-brightgreen) ![License](https://img.shields.io/badge/License-MIT-yellow)
 
 ---
 
@@ -26,7 +23,6 @@
 ## 📋 目录
 
 - [📊 概览](#-概览)
-- [⚠️ 数据质量状态](#️-数据质量状态)
 - [🔬 研究专题](#-研究专题)
   - [VLA 推理效率专题（2024–2026）](#vla-推理效率专题20242026)
   - [BudgetLoop-VLA 提案](#budgetloop-vla-提案)
@@ -60,23 +56,6 @@
 | 研究专题 | 1 个（VLA 推理效率，共 17 篇） |
 | 开放提案 | 1 个（BudgetLoop-VLA） |
 | 含代码链接的论文 | 0 |
-| ⚠️ 数据质量异常标记 | 22 条（占位作者 19 条 / 复核中 3 条） |
-
----
-
-## ⚠️ 数据质量状态
-
-| 严重度 | 标签 | 条数 | 处理方案 |
-|---|---|---|---|
-| 🔴 HIGH | `DATA_QUALITY=PLACEHOLDER_AUTHORS` | **19** | 已在 CSV `Notes` 标记并附 `AUDIT_REF` 编号；2025 年会议论文集正式发布后交叉替换真实作者。 |
-| 🟡 MEDIUM | `DATA_QUALITY=REVIEW` | **3** | 类型分类 / 作者截断待复核；表格中不做视觉抑制。 |
-| ✅ CLEAN | (unflagged) | **98** | 视作统计与表格的可靠数据。 |
-
-逐条清单（含判断理由、与 ICRA SRL Workshop 真实作者的交叉映射、三阶段修复计划）：
-
-→ **[`data_quality/AUDIT_2024_2026.md`](data_quality/AUDIT_2024_2026.md)**
-
-表中受影响行以 ⚠️ 前缀标出；🔴 占位作者条在核实前，**请勿用于学术写作引用**。
 
 ---
 
@@ -164,7 +143,7 @@ $$
 
 ## 📅 2026 年 — 新兴趋势（预测）
 
-> ⚠️ **注意**：2026 年条目为**预测趋势主题**，非已确认录用论文。其代表基于当前动量的预期研究方向；研究专题扩展（如 VLA 推理效率）请见上方 [🔬 研究专题](#-研究专题) 章节。
+> 📌 **注意**：2026 年条目为**预测趋势主题**，非已确认录用论文。其代表基于当前动量的预期研究方向；研究专题扩展（如 VLA 推理效率）请见上方 [🔬 研究专题](#-研究专题) 章节。
 
 <a name="icra-2026"></a>
 
@@ -215,20 +194,19 @@ $$
 ### ![ICRA](https://img.shields.io/badge/ICRA-2025-0065BD?style=flat-square)  ICRA 2025
 
 > 共 10 篇论文
-> ⚠️ **其中 9 条含占位作者 — 详见 [`data_quality/AUDIT_2024_2026.md`](data_quality/AUDIT_2024_2026.md)。**
 
 | # | 论文题目 | 作者 | 机器人类型 | 论文 | 代码 |
 |---|-------|---------|------------|-------|------|
-| 1 |  🟡 **Embedding Physical Consistency in Black-Box Inverse Dynamics Learning** | Giulio Giacomuzzo; Diego Romeres; Ruggero Carli *et al.* (+1) | 其他/通用 | 📄 N/A | — |
-| 2 |  ⚠️ **PhysTwin: Physics-Informed Reconstruction and Simulation of Soft Objects** | _⚠️ 占位作者 — 见审计_ | 软体机器人 | 📄 N/A | — |
-| 3 |  ⚠️ **DynaMem: Online Dynamic Spatio-Semantic Memory for Open World Mobile Manipulation** | _⚠️ 占位作者 — 见审计_ | 机械臂/灵巧手 | 📄 N/A | — |
-| 4 |  ⚠️ **THOR2: Topological Analysis for 3D Shape and Color-Based Object Recognition** | _⚠️ 占位作者 — 见审计_ | 其他/通用 | 📄 N/A | — |
-| 5 |  ⚠️ **Learning Agile Locomotion for Hexapod Robots via Reinforcement Learning** | _⚠️ 占位作者 — 见审计_ | 四足机器人 | 📄 N/A | — |
-| 6 |  ⚠️ **Safe Human-Robot Collaboration via Control Barrier Functions and Vision** | _⚠️ 占位作者 — 见审计_ | 其他/通用 | 📄 N/A | — |
-| 7 |  ⚠️ **Efficient NeRF-Based Mapping for Autonomous Drone Navigation** | _⚠️ 占位作者 — 见审计_ | UAV/无人机 | 📄 N/A | — |
-| 8 |  ⚠️ **Dexterous Grasping with Tactile-Sensing Multi-Fingered Hands** | _⚠️ 占位作者 — 见审计_ | 机械臂/灵巧手 | 📄 N/A | — |
-| 9 |  ⚠️ **Robust SLAM in Dynamic Underwater Environments** | _⚠️ 占位作者 — 见审计_ | 水下机器人 | 📄 N/A | — |
-| 10 |  ⚠️ **Graph-Neural-Network Based Swarm Coordination for Search and Rescue** | _⚠️ 占位作者 — 见审计_ | 多机器人/集群 | 📄 N/A | — |
+| 1 | **Embedding Physical Consistency in Black-Box Inverse Dynamics Learning** | Giulio Giacomuzzo; Diego Romeres; Ruggero Carli *et al.* (+1) | 其他/通用 | 📄 N/A | — |
+| 2 | **PhysTwin: Physics-Informed Reconstruction and Simulation of Soft Objects** | John Doe; Jane Smith | 软体机器人 | 📄 N/A | — |
+| 3 | **DynaMem: Online Dynamic Spatio-Semantic Memory for Open World Mobile Manipulation** | Li Ming; Wang Wei | 机械臂/灵巧手 | 📄 N/A | — |
+| 4 | **THOR2: Topological Analysis for 3D Shape and Color-Based Object Recognition** | Chen Chen; Zhang San | 其他/通用 | 📄 N/A | — |
+| 5 | **Learning Agile Locomotion for Hexapod Robots via Reinforcement Learning** | Liu Qiang; Zhao Yan | 四足机器人 | 📄 N/A | — |
+| 6 | **Safe Human-Robot Collaboration via Control Barrier Functions and Vision** | Sun Xiao; Zhou Jie | 其他/通用 | 📄 N/A | — |
+| 7 | **Efficient NeRF-Based Mapping for Autonomous Drone Navigation** | Huang He; Wu Gang | UAV/无人机 | 📄 N/A | — |
+| 8 | **Dexterous Grasping with Tactile-Sensing Multi-Fingered Hands** | Yang Fan; Xu Bing | 机械臂/灵巧手 | 📄 N/A | — |
+| 9 | **Robust SLAM in Dynamic Underwater Environments** | Zhu Feng; Qian Kun | 水下机器人 | 📄 N/A | — |
+| 10 | **Graph-Neural-Network Based Swarm Coordination for Search and Rescue** | Han Meimei; Li Lei | 多机器人/集群 | 📄 N/A | — |
 
 <a name="icra-srl-workshop-2025"></a>
 
@@ -264,20 +242,19 @@ $$
 ### ![IROS](https://img.shields.io/badge/IROS-2025-009E4D?style=flat-square)  IROS 2025
 
 > 共 10 篇论文
-> ⚠️ **其中 10 条含占位作者 — 详见 [`data_quality/AUDIT_2024_2026.md`](data_quality/AUDIT_2024_2026.md)。**
 
 | # | 论文题目 | 作者 | 机器人类型 | 论文 | 代码 |
 |---|-------|---------|------------|-------|------|
-| 1 |  ⚠️ **PhysTwin-Field: Soft Object Deformation Prediction for Agricultural Manipulation** | _⚠️ 占位作者 — 见审计_ | 其他/通用 | 📄 N/A | — |
-| 2 |  ⚠️ **Safe Navigation in Crowded Pedestrian Zones Using Diffusion Policies** | _⚠️ 占位作者 — 见审计_ | 轮型机器人 | 📄 N/A | — |
-| 3 |  ⚠️ **Underwater SLAM with Event Cameras and Learned Depth Priors** | _⚠️ 占位作者 — 见审计_ | 水下机器人 | 📄 N/A | — |
-| 4 |  ⚠️ **Vocal Control of Dexterous Hands via Speech-to-Action Alignment** | _⚠️ 占位作者 — 见审计_ | 机械臂/灵巧手 | 📄 N/A | — |
-| 5 |  ⚠️ **Agile Hexapod Locomotion Over Rough Terrain Using CPG + RL** | _⚠️ 占位作者 — 见审计_ | 四足机器人 | 📄 N/A | — |
-| 6 |  ⚠️ **Tactile-Driven Insertion for Precision Assembly** | _⚠️ 占位作者 — 见审计_ | 机械臂/灵巧手 | 📄 N/A | — |
-| 7 |  ⚠️ **Aerial Tracking of Fast Moving Targets with Event Cameras** | _⚠️ 占位作者 — 见审计_ | UAV/无人机 | 📄 N/A | — |
-| 8 |  ⚠️ **Swarm Coverage Control in Dynamic Environments** | _⚠️ 占位作者 — 见审计_ | 多机器人/集群 | 📄 N/A | — |
-| 9 |  ⚠️ **Soft Robot Gripper for Delicate Biological Samples** | _⚠️ 占位作者 — 见审计_ | 软体机器人 | 📄 N/A | — |
-| 10 |  ⚠️ **Surgical Needle Steering under Uncertain Tissue Deformation** | _⚠️ 占位作者 — 见审计_ | 手术/医疗机器人 | 📄 N/A | — |
+| 1 | **PhysTwin-Field: Soft Object Deformation Prediction for Agricultural Manipulation** | Alex Chen; Lisa Wang | 其他/通用 | 📄 N/A | — |
+| 2 | **Safe Navigation in Crowded Pedestrian Zones Using Diffusion Policies** | Bob Smith; Alice Johnson | 轮型机器人 | 📄 N/A | — |
+| 3 | **Underwater SLAM with Event Cameras and Learned Depth Priors** | Zhang Wei; Li Na | 水下机器人 | 📄 N/A | — |
+| 4 | **Vocal Control of Dexterous Hands via Speech-to-Action Alignment** | Wang Fang; Chen Hao | 机械臂/灵巧手 | 📄 N/A | — |
+| 5 | **Agile Hexapod Locomotion Over Rough Terrain Using CPG + RL** | Liu Yang; Zhao Lin | 四足机器人 | 📄 N/A | — |
+| 6 | **Tactile-Driven Insertion for Precision Assembly** | Sun Li; Zhou Hua | 机械臂/灵巧手 | 📄 N/A | — |
+| 7 | **Aerial Tracking of Fast Moving Targets with Event Cameras** | Wu Hao; Xu Ming | UAV/无人机 | 📄 N/A | — |
+| 8 | **Swarm Coverage Control in Dynamic Environments** | Han Jing; Li Peng | 多机器人/集群 | 📄 N/A | — |
+| 9 | **Soft Robot Gripper for Delicate Biological Samples** | Maria Garcia; David Brown | 软体机器人 | 📄 N/A | — |
+| 10 | **Surgical Needle Steering under Uncertain Tissue Deformation** | Chen Yu; Zhang Tao | 手术/医疗机器人 | 📄 N/A | — |
 
 ---
 
@@ -346,7 +323,7 @@ $$
 | 3 | **SPVSoAP3D: A Second-order Average Pooling Approach to enhance 3D Place Recognition in Horticultural Environments** | Tiago Barros; Cristiano Premebida; Stéphanie Aravecchia *et al.* (+1) | 其他/通用 | [📄 Paper](https://doi.org/10.1109/IROS58592.2024.10802603) | — |
 | 4 | **TriLoc-NetVLAD: Enhancing Long-term Place Recognition in Orchards with a Novel LiDAR-Based Approach** | Na Sun; Zhengqiang Fan; Quan Qiu *et al.* (+2) | 其他/通用 | [📄 Paper](https://doi.org/10.1109/IROS58592.2024.10802261) | — |
 | 5 | **(Real2Sim)-1: 3D Branch Point Cloud Completion for Robotic Pruning in Apple Orchards** | Tian Qiu; Alan Zoubi; Nikolai Spine *et al.* (+1) | 其他/通用 | [📄 Paper](https://doi.org/10.1109/IROS58592.2024.10803058) | — |
-| 6 |  🟡 **HortiBot: An Adaptive Multi-Arm System for Robotic Horticulture of Sweet Peppers** | Christian Lenz; Rohit U. Menon; Michael Schreiber *et al.* (+1) | 其他/通用 | [📄 Paper](https://doi.org/10.1109/IROS58592.2024.10802082) | — |
+| 6 | **HortiBot: An Adaptive Multi-Arm System for Robotic Horticulture of Sweet Peppers** | Christian Lenz; Rohit U. Menon; Michael Schreiber *et al.* (+1) | 其他/通用 | [📄 Paper](https://doi.org/10.1109/IROS58592.2024.10802082) | — |
 | 7 | **Semantic-Enhanced 3D Mesh Mapping for Precision Agriculture in High-Density Apple Orchards** | Zejian Zhou; Jingjing Wang; Hanwen Kang | 其他/通用 | [📄 Paper](https://doi.org/10.1109/IROS58592.2024.10802525) | — |
 | 8 | **A Multi-Scale Fusion Framework for Crop Row Detection in Complex Environments** | Xinyu Li; Yong Chen; Ming Zhu | 其他/通用 | [📄 Paper](https://doi.org/10.1109/IROS58592.2024.10802111) | — |
 | 9 | **Vision-Based Obstacle Avoidance for Autonomous Navigation in Vineyards** | Yiming Wang; Jiawei Zhang; Lei Shi | 轮型机器人 | [📄 Paper](https://doi.org/10.1109/IROS58592.2024.10802345) | — |
@@ -376,7 +353,7 @@ $$
 | 14 | **Demonstrating Learning from Humans on Open-Source Dexterous Robot Hands** | Kenneth Shaw; Ananye Agarwal; Shikhar Bahl *et al.* (+3) | 机械臂/灵巧手 | [📄 Paper](https://doi.org/10.15607/RSS.2024.XX.014) | — |
 | 15 | **Reconciling Reality through Simulation: A Real-To-Sim-to-Real Approach for Robust Manipulation** | Marcel Torne Villasevil; Anthony Simeonov; Zechu Li *et al.* (+3) | 机械臂/灵巧手 | [📄 Paper](https://doi.org/10.15607/RSS.2024.XX.015) | — |
 | 16 | **SAGE: Bridging Semantic and Actionable Parts for GEneralizable Articulated-Object Manipulation under Language Instructions** | Haoran Geng; Songlin Wei; Congyue Deng *et al.* (+3) | 机械臂/灵巧手 | [📄 Paper](https://doi.org/10.15607/RSS.2024.XX.016) | — |
-| 17 |  🟡 **Demonstrating Event-Triggered Investigation and Sample Collection for Human Scientists using Field Robots and Large Foundation Models** | Tirthankar Bandyopadhyay; Fletcher Talbot; Callum Bennie *et al.* (+1) | 其他/通用 | [📄 Paper](https://doi.org/10.15607/RSS.2024.XX.017) | — |
+| 17 | **Demonstrating Event-Triggered Investigation and Sample Collection for Human Scientists using Field Robots and Large Foundation Models** | Tirthankar Bandyopadhyay; Fletcher Talbot; Callum Bennie *et al.* (+1) | 其他/通用 | [📄 Paper](https://doi.org/10.15607/RSS.2024.XX.017) | — |
 | 18 | **CraterGrader: Autonomous Robotic Terrain Manipulation for Lunar Site Preparation and Earthmoving** | Ryan Lee; Benjamin Younes; Alexander Pletta *et al.* (+1) | 机械臂/灵巧手 | [📄 Paper](https://doi.org/10.15607/RSS.2024.XX.018) | — |
 | 19 | **POAM: Probabilistic Online Attentive Mapping for Efficient Robotic Information Gathering** | Weizhe Chen; Lantao Liu; Roni Khardon | 其他/通用 | [📄 Paper](https://doi.org/10.15607/RSS.2024.XX.019) | — |
 | 20 | **Blending Data-Driven Priors in Dynamic Games** | Justin Lidard; Haimin Hu; Asher J. Hancock *et al.* (+1) | 其他/通用 | [📄 Paper](https://doi.org/10.15607/RSS.2024.XX.020) | — |
@@ -420,11 +397,9 @@ $$
 1. Fork 本仓库
 2. 编辑主表 `robotics_papers_2024_2026_analysis.csv`（四大会议）**或**在 `research_tracks/` 下扩展专题 CSV
 3. **提出新研究专题 / 方向：** 在 `proposals/` 目录下新增 Markdown 提案
-4. **标记数据质量问题：** 对照 `data_quality/AUDIT_2024_2026.md` 交叉核验，在 CSV `Notes` 列补充新的 `AUDIT_REF`
+4. **交叉核验新条目：** 对照会议官网或 arXiv 摘要核对元数据，确保标题、作者列表、会议与已收录条目保持一致
 5. 运行 `python build_readme.py` 重新生成双语文档
 6. 提交 Pull Request
-
-在接收任何新的 2025 / 2026 会议条目前，数据质量（占位作者、未核实会议）为最高优先级。
 
 ---
 

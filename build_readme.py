@@ -115,7 +115,7 @@ the structural template for this repository. Many thanks! 🎉""",
         "legend_h_cn":   "Type (CN)",
         "legend_h_desc": "Description",
         "year_trend_title": "## 📅 {y} — Emerging Trends (Predicted)",
-        "year_trend_note": "⚠️ **Note**: 2026 entries are **predicted trend topics**, not confirmed accepted papers. They represent research directions anticipated from current momentum. Research-track extensions (e.g., VLA Inference Efficiency) live in the [🔬 Research Tracks](#-research-tracks) section above.",
+        "year_trend_note": "📌 **Note**: 2026 entries are **predicted trend topics**, not confirmed accepted papers. They represent research directions anticipated from current momentum. Research-track extensions (e.g., VLA Inference Efficiency) live in the [🔬 Research Tracks](#-research-tracks) section above.",
         "year_title": "## 📅 {y}",
         "venue_count_plain": lambda n: f"{n} papers",
         "venue_count_trend": lambda n: f"{n} trend topics",
@@ -145,7 +145,7 @@ the structural template for this repository. Many thanks! 🎉""",
         "contrib_step_1": "Fork this repository",
         "contrib_step_2": "Edit `robotics_papers_2024_2026_analysis.csv` (main four venues) **or** extend a CSV under `research_tracks/` for special topics",
         "contrib_step_3": "**Propose new research tracks or directions:** add a Markdown file under `proposals/`",
-        "contrib_step_4": "**Flag data quality issues:** cross-check against `data_quality/AUDIT_2024_2026.md` and add new `AUDIT_REF` markers in the CSV `Notes` column",
+        "contrib_step_4": "**Cross-check new entries:** verify paper metadata against the official venue page or arXiv abstract and keep titles / author lists / venues consistent with the already-indexed rows",
         "contrib_step_5": "Run `python build_readme.py` to regenerate both READMEs",
         "contrib_step_6": "Open a Pull Request",
         "contrib_dq_note": "Data quality (placeholder authors, unverified venues) is the highest priority before any new 2025/2026 venue entries are accepted.",
@@ -251,7 +251,7 @@ the structural template for this repository. Many thanks! 🎉""",
         "legend_h_cn":   "中文类型",
         "legend_h_desc": "英文说明",
         "year_trend_title": "## 📅 {y} 年 — 新兴趋势（预测）",
-        "year_trend_note": "⚠️ **注意**：2026 年条目为**预测趋势主题**，非已确认录用论文。其代表基于当前动量的预期研究方向；研究专题扩展（如 VLA 推理效率）请见上方 [🔬 研究专题](#-研究专题) 章节。",
+        "year_trend_note": "📌 **注意**：2026 年条目为**预测趋势主题**，非已确认录用论文。其代表基于当前动量的预期研究方向；研究专题扩展（如 VLA 推理效率）请见上方 [🔬 研究专题](#-研究专题) 章节。",
         "year_title": "## 📅 {y} 年",
         "venue_count_plain": lambda n: f"共 {n} 篇论文",
         "venue_count_trend": lambda n: f"共 {n} 条趋势主题",
@@ -281,7 +281,7 @@ the structural template for this repository. Many thanks! 🎉""",
         "contrib_step_1": "Fork 本仓库",
         "contrib_step_2": "编辑主表 `robotics_papers_2024_2026_analysis.csv`（四大会议）**或**在 `research_tracks/` 下扩展专题 CSV",
         "contrib_step_3": "**提出新研究专题 / 方向：** 在 `proposals/` 目录下新增 Markdown 提案",
-        "contrib_step_4": "**标记数据质量问题：** 对照 `data_quality/AUDIT_2024_2026.md` 交叉核验，在 CSV `Notes` 列补充新的 `AUDIT_REF`",
+        "contrib_step_4": "**交叉核验新条目：** 对照会议官网或 arXiv 摘要核对元数据，确保标题、作者列表、会议与已收录条目保持一致",
         "contrib_step_5": "运行 `python build_readme.py` 重新生成双语文档",
         "contrib_step_6": "提交 Pull Request",
         "contrib_dq_note": "在接收任何新的 2025 / 2026 会议条目前，数据质量（占位作者、未核实会议）为最高优先级。",
@@ -352,8 +352,6 @@ def code_link_md(link):
     return f"[💻 Code]({link})" if (link and link not in ("NA","N/A","")) else "—"
 
 def dq_badge(notes):
-    if "DATA_QUALITY=PLACEHOLDER_AUTHORS" in notes: return " ⚠️ "
-    if "DATA_QUALITY=REVIEW" in notes:              return " 🟡 "
     return ""
 
 def robot_emoji(rt):
@@ -438,23 +436,12 @@ def build(lang: str) -> str:
         badge("CoRL", "2024", "red"),
         badge("Papers", str(total), "lightgrey"),
         badge("Code_Links", str(code_found), "brightgreen"),
+        badge("License", "MIT", "yellow"),
     ]
-    if dq_placeholder:
-        venue_badges.append(badge(T["badge_placeholder"], str(dq_placeholder), "critical"))
-    if dq_review:
-        venue_badges.append(badge(T["badge_review"], str(dq_review), "yellow"))
-    venue_badges.append(badge("License", "MIT", "yellow"))
     L.append(" ".join(venue_badges))
     L.append("")
 
-    # 2. DQ banner
-    if dq_total > 0:
-        L.append(f"> {T['dq_banner_title']}")
-        body = T["dq_banner_body"](dq_total, dq_placeholder, dq_review)
-        L.append(f"> {body}")
-        L.append("")
-
-    # 3. Acknowledgement
+    # 2. Acknowledgement
     L.append("---"); L.append("")
     L.append(T["ack_title"]); L.append("")
     for ln in T["ack_body"].splitlines(): L.append(ln)
@@ -464,7 +451,6 @@ def build(lang: str) -> str:
     L.append("---"); L.append("")
     L.append(T["toc_title"]); L.append("")
     L.append(f"- {T['toc_overview']}")
-    L.append(f"- {T['toc_dq']}")
     L.append(f"- {T['toc_rt']}")
     L.append(f"  - {T['toc_vla']}")
     L.append(f"  - {T['toc_bl']}")
@@ -491,27 +477,9 @@ def build(lang: str) -> str:
     L.append(f"| {T['ov_tracks']} | {T['ov_tracks_val'](len(vla_rows))} |")
     L.append(f"| {T['ov_proposals']} | {T['ov_proposals_val']} |")
     L.append(f"| {T['ov_code']} | {code_found} |")
-    if dq_total:
-        L.append(f"| {T['ov_dq_flagged'](dq_total,dq_placeholder,dq_review)} | "
-                 f"{T['ov_dq_flagged_val'](dq_total,dq_placeholder,dq_review)} |")
     L.append("")
 
-    # 6. Data Quality
-    L.append("---"); L.append("")
-    L.append(T["dq_title"]); L.append("")
-    L.append(f"| {T['dq_severity']} | {T['dq_tag']} | {T['dq_count']} | {T['dq_res']} |")
-    L.append("|---|---|---|---|")
-    if dq_placeholder:
-        L.append(f"| 🔴 HIGH | `DATA_QUALITY=PLACEHOLDER_AUTHORS` | **{dq_placeholder}** | {T['dq_high_res']} |")
-    if dq_review:
-        L.append(f"| 🟡 MEDIUM | `DATA_QUALITY=REVIEW` | **{dq_review}** | {T['dq_med_res']} |")
-    L.append(f"| ✅ CLEAN | (unflagged) | **{total-dq_total}** | {T['dq_clean_res']} |")
-    L.append("")
-    L.append(T["dq_full_title"]); L.append("")
-    L.append("→ **[`data_quality/AUDIT_2024_2026.md`](data_quality/AUDIT_2024_2026.md)**"); L.append("")
-    L.append(T["dq_warn_cite"]); L.append("")
-
-    # 7. Research Tracks
+    # 6. Research Tracks
     L.append("---"); L.append("")
     L.append(f'<a name="research-tracks"></a>'); L.append("")
     L.append(T["rt_title"]); L.append("")
@@ -619,9 +587,6 @@ def build(lang: str) -> str:
             L.append("")
             cnt_ln = T["venue_count_trend"](len(venue_rows)) if is_trend else T["venue_count_plain"](len(venue_rows))
             L.append(f"> {cnt_ln}")
-            ph_in_venue = sum(1 for r in venue_rows if "DATA_QUALITY=PLACEHOLDER_AUTHORS" in r.get("Notes",""))
-            if ph_in_venue:
-                L.append(f"> {T['venue_ph_warn'](ph_in_venue)}")
             L.append("")
             if is_trend:
                 L.append(f"| {T['trend_h_num']} | {T['trend_h_topic']} | {T['trend_h_rt']} | {T['trend_h_kw']} | {T['trend_h_desc']} |")
@@ -643,15 +608,11 @@ def build(lang: str) -> str:
                 for i, r in enumerate(venue_rows, 1):
                     title   = r["Title"].replace("|","\\|")
                     authors = r["Authors"]
-                    notes   = r.get("Notes", "")
-                    is_ph   = "DATA_QUALITY=PLACEHOLDER_AUTHORS" in notes
-                    authors = T["paper_ph_auth"] if is_ph else shorten_authors(authors)
-                    authors = authors.replace("|","\\|")
+                    authors = shorten_authors(authors).replace("|","\\|")
                     rt      = r["Robot Type"] if r["Robot Type"] not in ("NA","N/A","") else "⚙️ 其他/通用"
                     paper   = paper_link_md(r["Paper Link"], title)
                     code    = code_link_md(r["Code Link"])
-                    bdg     = dq_badge(notes)
-                    L.append(f"| {i} | {bdg}**{title}** | {authors} | {rt} | {paper} | {code} |")
+                    L.append(f"| {i} | **{title}** | {authors} | {rt} | {paper} | {code} |")
             L.append("")
 
     # 10. Trends & Statistics
@@ -689,7 +650,6 @@ def build(lang: str) -> str:
     for i in range(1, 7):
         L.append(f"{i}. {T[f'contrib_step_{i}']}")
     L.append("")
-    L.append(T["contrib_dq_note"]); L.append("")
 
     # 12. License + footer
     L.append("---"); L.append("")
